@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    
+    if(isset($_SESSION['first_name'])){
+        header('Location: admin-dashboard.php');
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
