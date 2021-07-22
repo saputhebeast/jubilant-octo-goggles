@@ -17,9 +17,9 @@
     <a href = "#">Add admin</a> -->
 
     <div class="nav">
-        <a href="admin-dashboard.php" class="active">Dashboard</a>
+        <a href="admin-dashboard.php">Dashboard</a>
         <a href="admin-manage.php">Manage Admin</a>
-        <a href="admin-addItem.php">Add Item</a>
+        <a href="admin-addItem.php" class="active">Add Item</a>
         <div class="nav-right">
             <a href="admin-logout.php">Logout</a>
         </div>
