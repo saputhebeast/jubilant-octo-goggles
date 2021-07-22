@@ -26,11 +26,9 @@
             <p class='error'><?php echo $_GET['error'] ?></p>
             <?php } ?>
 
-            <label for="">Email: </label>
-            <input type="email" name="email" id="" placeholder="Email"><br>
-            <label for="">Password</label>
-            <input type="password" name="password" id="password" placeholder="Password"><br>
-            <p class="check"><input type="checkbox" name="show" id="" onclick="showHidePassword()"><label for="">Show Password</label><br></p>
+            <input type="email" name="email" class="email" placeholder="Email"><br>
+            <input type="password" id="password" name="password" class="password" placeholder="Password"><br>
+            <input type="checkbox" name="show" class="show" onclick="showHidePassword()"><label for="">Show Password</label><br>
             <input type="submit" value="Submit" class="submit">
         </div>
     </form>

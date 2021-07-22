@@ -21,7 +21,7 @@
             <a href="admin-logout.php">Logout</a>
         </div>
     </div>
-
+    
     <h1>Hello, <?php echo $_SESSION['first_name']." ".$_SESSION['last_name']; ?></h1>
 
 </body>
