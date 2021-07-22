@@ -13,22 +13,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/admin/admin.css">
     <title>Admin Login</title>
 </head>
 <body>
-    <h1>Admin Login</h1>
+    
     <form action="admin-login.php" method="post">
         <!-- error displaying -->
-        <?php if (isset($_GET['error'])) { ?>
-        <p class='error'><?php echo $_GET['error'] ?></p>
-        <?php } ?>
+        <h1>Admin Login</h1>
+        <div class="container">
+            <?php if (isset($_GET['error'])) { ?>
+            <p class='error'><?php echo $_GET['error'] ?></p>
+            <?php } ?>
 
-        <label for="">Email: </label>
-        <input type="email" name="email" id="" placeholder="Email"><br>
-        <label for="">Password</label>
-        <input type="password" name="password" id="password" placeholder="Password"><br>
-        <input type="checkbox" name="show" id="" onclick="showHidePassword()"><label for="">Show Password</label><br>
-        <input type="submit" value="Submit">
+            <label for="">Email: </label>
+            <input type="email" name="email" id="" placeholder="Email"><br>
+            <label for="">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password"><br>
+            <p class="check"><input type="checkbox" name="show" id="" onclick="showHidePassword()"><label for="">Show Password</label><br></p>
+            <input type="submit" value="Submit" class="submit">
+        </div>
     </form>
     
     <script>

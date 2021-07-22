@@ -9,13 +9,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/admin-dashboard.css">
+    <link rel="stylesheet" href="../styles/admin/admin-dashboard.css">
     <title>Admin-Dashboard</title>
 </head>
 <body>
-    <!-- <a href = "admin-logout.php">Logout</a>
-    <a href = "#">Add admin</a> -->
-
     <div class="nav">
         <a href="admin-dashboard.php" class="active">Dashboard</a>
         <a href="admin-manage.php">Manage Admin</a>
