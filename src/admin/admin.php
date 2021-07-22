@@ -9,30 +9,28 @@
 <body>
     <h1>Admin Login</h1>
     <form action="admin-login.php" method="post">
-        Email: <input type="email" name="email" id="" placeholder="Email" required><br>
-        Password: <input type="password" name="password" id="" placeholder="Password" required><br>
+        <!-- error displaying -->
+        <?php if (isset($_GET['error'])) { ?>
+        <p class='error'><?php echo $_GET['error'] ?></p>
+        <?php } ?>
+
+        <label for="">Email: </label>
+        <input type="email" name="email" id="" placeholder="Email"><br>
+        <label for="">Password</label>
+        <input type="password" name="password" id="password" placeholder="Password"><br>
+        <input type="checkbox" name="show" id="" onclick="showHidePassword()"><label for="">Show Password</label><br>
         <input type="submit" value="Submit">
     </form>
-
-
-
-
-
-
-
     
-<!-- 
-    <?php 
-    $hash = password_hash("jason123", PASSWORD_DEFAULT); 
-    echo $hash.'<br>';
-    if (password_verify('jason123', $hash)) {
-        echo 'Password is same!';
-    } else {
-        echo 'Invalid password.';
-    }
-    
-    ?>
-    -->
-
+    <script>
+        function showHidePassword(){
+            var val = document.getElementById('password');
+            if (val.type === 'password') {
+                val.type = 'text';
+            }else{
+                val.type = 'password';
+            }
+        }
+    </script>
 </body>
 </html>
