@@ -21,7 +21,7 @@
         echo "</script>";
     }else{
         echo "<script type='text/javascript'>";
-        echo "alert('Updating Failed');";
+        echo "alert('Not Updated');";
         echo "window.location.href = 'admin-manage.php'";
         echo "</script>";
     }

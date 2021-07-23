@@ -18,14 +18,30 @@
     $newPassword = $_POST['new-password'];
     $confirmNewPassword = $_POST['confirm-new-password'];
 
-    if (($oldPassword === $password) && ($newPassword === $confirmNewPassword)) {
-        echo "changed password";
+    if ((empty($newPassword)) && (empty($confirmNewPassword))) {
+        header("Location: admin-manage-password.php?error=empty blanks not valid");
+        exit();
+    }elseif($password !== $oldPassword){
+            header("Location: admin-manage-password.php?error=incorrect old password");
+            exit();
     }elseif ($newPassword !== $confirmNewPassword) {
         header("Location: admin-manage-password.php?error=new password and confirm new password doesn't match");
         exit();
-    }elseif($password !== $oldPassword){
-        header("Location: admin-manage-password.php?error=incorrect old password");
-        exit();
+    }elseif (($oldPassword === $password) && ($newPassword === $confirmNewPassword)) {
+        $sql = "UPDATE admin SET password = '$confirmNewPassword' WHERE admin_id = '$admin_id';";
+        mysqli_query($conn, $sql);
+        
+        if (mysqli_affected_rows($conn) > 0) {
+            echo "<script type='text/javascript'>";
+            echo "alert('Updated Password Successfully');";
+            echo "window.location.href = 'admin-manage.php'";
+            echo "</script>";
+        }else{
+            echo "<script type='text/javascript'>";
+            echo "alert('Not Updated');";
+            echo "window.location.href = 'admin-manage.php'";
+            echo "</script>";
+        }
     }
 ?>
 
