@@ -1,9 +1,14 @@
 <?php
     require "../resources/config.php";
+    session_start();
+
+    if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SESSION['last_name'])){
+?>
+
+<?php
+    require "../resources/config.php";
 
     $admin_id = $_GET['admin_id'];
-
-    session_start();
     $_SESSION['admin_id'] = $admin_id;
     
     $sql = "SELECT * FROM admin WHERE admin_id = $admin_id";
@@ -24,8 +29,19 @@
     <title>Edit Records</title>
 </head>
 <body>
-    <form action="" method="post">
-        <label for="">Admin ID: </label><input type="text" name="admin_id" value = "<?php echo $admin_id?>"><br>
+    <form action="admin-manage-edit-submit.php" method="POST">
+        <label for="">Admin ID: </label><input type="text" name="admin_id" value = "<?php echo $admin_id?>" disabled><br>
+        <label for="">First Name: </label><input type="text" name="first_name" value = "<?php echo $first_name?>"><br>
+        <label for="">Last Name: </label><input type="text" name="last_name" value = "<?php echo $last_name?>"><br>
+        <label for="">Email: </label><input type="email" name="email" value = "<?php echo $email?>"><br>
+        <input type="submit" value="Update">
     </form>
 </body>
 </html>
+
+<?php
+    }else{
+        header("Location: admin.php");
+        exit();
+    }
+?>
