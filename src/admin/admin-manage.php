@@ -1,4 +1,5 @@
 <?php
+    require "../resources/config.php";
     session_start();
 
     if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SESSION['last_name'])){
@@ -22,7 +23,17 @@
         </div>
     </div>
 
-    
+    <?php
+        $sql = "SELECT * FROM admin ORDER BY admin_id ASC;";
+        $result = mysqli_query($conn, $sql);
+
+        $numberOfRows = $result->num_rows;
+        if ($numberOfRows > 0) {
+            
+        }else{
+            echo "<h1>There are no editors to show</h1>";
+        }
+    ?>
 
 </body>
 </html>
