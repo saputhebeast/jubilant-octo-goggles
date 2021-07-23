@@ -11,7 +11,7 @@
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
 
-    $sql = "UPDATE admin SET first_name = '$first_name', last_name = '$last_name', email = '$email' WHERE admin_id = '$admin_id'";
+    $sql = "UPDATE admin SET first_name = '$first_name', last_name = '$last_name', email = '$email' WHERE admin_id = '$admin_id';";
     mysqli_query($conn, $sql);
 
     if (mysqli_affected_rows($conn) > 0) {
@@ -21,7 +21,7 @@
         echo "</script>";
     }else{
         echo "<script type='text/javascript'>";
-        echo "alert('Updated Successfully');";
+        echo "alert('Updating Failed');";
         echo "window.location.href = 'admin-manage.php'";
         echo "</script>";
     }
