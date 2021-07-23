@@ -22,18 +22,33 @@
             <a href="admin-logout.php">Logout</a>
         </div>
     </div>
+    
+    <table border=1>
+        <tr>
+            <th>Admin ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Update</th>
+        </tr>
+        <?php
+            $sql = "SELECT * FROM admin ORDER BY admin_id ASC;";
+            $result = mysqli_query($conn, $sql);
 
-    <?php
-        $sql = "SELECT * FROM admin ORDER BY admin_id ASC;";
-        $result = mysqli_query($conn, $sql);
-
-        $numberOfRows = $result->num_rows;
-        if ($numberOfRows > 0) {
-            
-        }else{
-            echo "<h1>There are no editors to show</h1>";
-        }
-    ?>
+            $numberOfRows = $result->num_rows;
+            if ($numberOfRows > 0) {
+                while($row = $result->fetch_assoc()){
+                    echo "<tr>";
+                    echo "<td>{$row['admin_id']}</td>";
+                    echo "<td>{$row['first_name']}</td>";
+                    echo "<td>{$row['last_name']}</td>";
+                    echo "<td>{$row['email']}</td>";
+                    echo "<td><a href='admin-manage-edit.php?admin_id=$row[admin_id]'>Edit</a> | <a href='admin-manage-password.php?admin_id=$row[admin_id]'>Change Password</a> | <a href='admin-manage-delete.php?admin_id=$row[admin_id]'>Delete</a></td>";
+                    echo "</tr>";
+                }
+            }
+        ?>
+    </table>
 
 </body>
 </html>
