@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <h1>Add Item</h1>
+    <h1>Manage Item</h1>
 
 </body>
 </html>

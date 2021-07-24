@@ -23,17 +23,34 @@
             <a href="admin-logout.php">Logout</a>
         </div>
     </div>
+    <h1>Manage User</h1>
     <a href="admin-manage-user-add.php">Add User</a>
+
+    <!-- 
+        customer_id
+        first_name
+        last_name
+        street_address
+        city
+        postal_code
+        phone
+        email 
+    -->
+
     <table border=1>
         <tr>
-            <th>Admin ID</th>
+            <th>Customer ID</th>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Street Address</th>
+            <th>City</th>
+            <th>Postal Code</th>
+            <th>Phone</th>
             <th>Email</th>
             <th>Update</th>
         </tr>
         <!-- <?php
-            $sql = "SELECT * FROM admin ORDER BY admin_id ASC;";
+            $sql = "SELECT * FROM customer ORDER BY customer_id ASC;";
             $result = mysqli_query($conn, $sql);
 
             $numberOfRows = $result->num_rows;

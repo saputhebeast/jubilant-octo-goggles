@@ -23,6 +23,7 @@
             <a href="admin-logout.php">Logout</a>
         </div>
     </div>
+    <h1>Admin Manage</h1>
     <a href="admin-manage-add.php">Add Admin</a>
     <table border=1>
         <tr>
