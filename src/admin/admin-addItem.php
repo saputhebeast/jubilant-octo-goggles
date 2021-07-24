@@ -16,13 +16,14 @@
     <div class="nav">
         <a href="admin-dashboard.php">Dashboard</a>
         <a href="admin-manage.php">Manage Admin</a>
-        <a href="admin-addItem.php" class="active">Add Item</a>
+        <a href="admin-addItem.php" class="active">Manage Item</a>
+        <a href="admin-manage-user.php">Manage User</a>
         <div class="nav-right">
             <a href="admin-logout.php">Logout</a>
         </div>
     </div>
 
-    
+    <h1>Add Item</h1>
 
 </body>
 </html>

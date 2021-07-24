@@ -29,6 +29,7 @@
     <title>Edit Records</title>
 </head>
 <body>
+    <a href="admin-manage.php">Go back to dashboard</a>
     <form action="admin-manage-edit-submit.php" method="POST">
         <label for="">Admin ID: </label><input type="text" name="admin_id" value = "<?php echo $admin_id?>" disabled><br>
         <label for="">First Name: </label><input type="text" name="first_name" value = "<?php echo $first_name?>"><br>

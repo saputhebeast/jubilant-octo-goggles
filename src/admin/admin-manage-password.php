@@ -14,6 +14,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="admin-manage.php">Go back to dashboard</a>
     <form action="admin-manage-password-submit.php" method="POST">
         <?php if (isset($_GET['error'])) { ?>
             <p class="error"><?php echo $_GET['error']; ?></p>

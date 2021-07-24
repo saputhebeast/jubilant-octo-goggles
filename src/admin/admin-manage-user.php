@@ -16,14 +16,14 @@
 <body>
     <div class="nav">
         <a href="admin-dashboard.php">Dashboard</a>
-        <a href="admin-manage.php" class="active">Manage Admin</a>
+        <a href="admin-manage.php">Manage Admin</a>
         <a href="admin-addItem.php">Manage Item</a>
-        <a href="admin-manage-user.php">Manage User</a>
+        <a href="admin-manage-user.php" class="active">Manage User</a>
         <div class="nav-right">
             <a href="admin-logout.php">Logout</a>
         </div>
     </div>
-    <a href="admin-manage-add.php">Add Admin</a>
+    <a href="admin-manage-user-add.php">Add User</a>
     <table border=1>
         <tr>
             <th>Admin ID</th>
@@ -32,7 +32,7 @@
             <th>Email</th>
             <th>Update</th>
         </tr>
-        <?php
+        <!-- <?php
             $sql = "SELECT * FROM admin ORDER BY admin_id ASC;";
             $result = mysqli_query($conn, $sql);
 
@@ -48,7 +48,7 @@
                     echo "</tr>";
                 }
             }
-        ?>
+        ?> -->
     </table>
 
 </body>
