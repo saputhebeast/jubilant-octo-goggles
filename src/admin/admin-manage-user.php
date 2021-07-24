@@ -18,7 +18,7 @@
         <a href="admin-dashboard.php">Dashboard</a>
         <a href="admin-manage.php">Manage Admin</a>
         <a href="admin-manage-user.php" class="active">Manage User</a>
-        <a href="admin-addItem.php">Manage Item</a>
+        <a href="admin-manage-item.php">Manage Item</a>
         <a href="#">Orders</a>
         <div class="nav-right">
             <a href="admin-logout.php">Logout</a>
