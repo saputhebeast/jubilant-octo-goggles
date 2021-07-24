@@ -17,8 +17,8 @@
     <div class="nav">
         <a href="admin-dashboard.php">Dashboard</a>
         <a href="admin-manage.php">Manage Admin</a>
-        <a href="admin-addItem.php">Manage Item</a>
         <a href="admin-manage-user.php" class="active">Manage User</a>
+        <a href="admin-addItem.php">Manage Item</a>
         <div class="nav-right">
             <a href="admin-logout.php">Logout</a>
         </div>
@@ -54,7 +54,7 @@
                     echo "<td>{$row['postal_code']}</td>";
                     echo "<td>{$row['phone']}</td>";
                     echo "<td>{$row['email']}</td>";
-                    echo "<td><a href='#?customer_id=$row[customer_id]'>Edit</a> | <a href='#?customer_id=$row[customer_id]'>Change Password</a> | <a href='#?customer_id=$row[customer_id]'>Delete</a></td>";
+                    echo "<td><a href='admin-manage-user-edit.php?customer_id=$row[customer_id]'>Edit</a> | <a href='admin-manage-user-password.php?customer_id=$row[customer_id]'>Change Password</a> | <a href='admin-manage-user-delete.php?customer_id=$row[customer_id]'>Delete</a></td>";
                     echo "</tr>";
                 }
             }
