@@ -24,18 +24,7 @@
         </div>
     </div>
     <h1>Manage User</h1>
-    <a href="admin-manage-user-add.php">Add User</a>
-
-    <!-- 
-        customer_id
-        first_name
-        last_name
-        street_address
-        city
-        postal_code
-        phone
-        email 
-    -->
+    <a href="admin-manage-user-add.php">Add Customer</a>
 
     <table border=1>
         <tr>
@@ -49,7 +38,7 @@
             <th>Email</th>
             <th>Update</th>
         </tr>
-        <!-- <?php
+        <?php
             $sql = "SELECT * FROM customer ORDER BY customer_id ASC;";
             $result = mysqli_query($conn, $sql);
 
@@ -57,15 +46,19 @@
             if ($numberOfRows > 0) {
                 while($row = $result->fetch_assoc()){
                     echo "<tr>";
-                    echo "<td>{$row['admin_id']}</td>";
+                    echo "<td>{$row['customer_id']}</td>";
                     echo "<td>{$row['first_name']}</td>";
                     echo "<td>{$row['last_name']}</td>";
+                    echo "<td>{$row['street_address']}</td>";
+                    echo "<td>{$row['city']}</td>";
+                    echo "<td>{$row['postal_code']}</td>";
+                    echo "<td>{$row['phone']}</td>";
                     echo "<td>{$row['email']}</td>";
-                    echo "<td><a href='admin-manage-edit.php?admin_id=$row[admin_id]'>Edit</a> | <a href='admin-manage-password.php?admin_id=$row[admin_id]'>Change Password</a> | <a href='admin-manage-delete.php?admin_id=$row[admin_id]'>Delete</a></td>";
+                    echo "<td><a href='#?customer_id=$row[customer_id]'>Edit</a> | <a href='#?customer_id=$row[customer_id]'>Change Password</a> | <a href='#?customer_id=$row[customer_id]'>Delete</a></td>";
                     echo "</tr>";
                 }
             }
-        ?> -->
+        ?>
     </table>
 
 </body>
