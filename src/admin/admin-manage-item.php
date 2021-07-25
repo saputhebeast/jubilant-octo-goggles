@@ -24,9 +24,9 @@
         </div>
     </div>
 
-    <h1>Manage Item</h1>
-    
-    
+    <h1>Manage Item- Laptop Management</h1>
+    <a href="admin-manage-item-laptop.php">add laptop</a>
+
 </body>
 </html>
 <?php
