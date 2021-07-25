@@ -20,19 +20,48 @@
 </head>
 <body>
     <a href="admin-manage-item.php">Go back to manage item</a>
-    <form action="admin-manage-add-submit.php" method="post">
+    <form action="#" method="POST">
         <?php if (isset($_GET['error'])) { ?>
             <p class="error"><?php echo $_GET['error']; ?></p>
         <?php } ?>
-        <label for="">First Name: </label><input type="text" name="first_name" value = ""><br>
-        <label for="">Last Name: </label><input type="text" name="last_name" value = ""><br>
-        <label for="">Email: </label><input type="email" name="email" value = ""><br>
-        <label for="">Password: </label><input type="password" name="password" value = ""><br>
-        <label for="">Confirm Password: </label><input type="password" name="re-password" value = ""><br>
-        <input type="submit" value="Add Admin">
+        <label for="">Laptop Brand: </label><input type="text" name="laptop_brand" value = ""><br>
+        <label for="">Laptop Model: </label><input type="text" name="laptop_model" value = ""><br>
+        <label for="">Image: </label><input type="file" name="image" value = ""><br>
+        <label for="">Processor: </label><input type="password" name="password" value = ""><br>
+        <label for="">Processor Model: </label><input type="password" name="re-password" value = ""><br>
+        <label for="">GPU: </label><input type="password" name="re-password" value = ""><br>
+        <label for="">RAM: </label><input type="password" name="re-password" value = ""><br>
+        <label for="">Laptop Storage: </label><input type="password" name="re-password" value = ""><br>
+        <label for="">Refresh Rate: </label><input type="password" name="re-password" value = ""><br>
+        <label for="">Display Resolution: </label><input type="password" name="re-password" value = ""><br>
+        <label for="">Display Description: </label><input type="password" name="re-password" value = ""><br>
+        <label for="">Display Description: </label><input type="password" name="re-password" value = ""><br>
+        <label for="">Weight: </label><input type="password" name="re-password" value = ""><br>
+        <label for="">Warranty: </label><input type="password" name="re-password" value = ""><br>
+        <label for="">Price: </label><input type="password" name="re-password" value = ""><br>
+        <label for="">About Laptop: </label><input type="password" name="re-password" value = ""><br>
+        <input type="submit" value="Add Laptop">
     </form>
 </body>
 </html>
+
+<!-- laptop_id
+laptop_brand
+laptop_model
+image
+processor
+processor_model
+gpu
+ram
+laptop_storage
+refresh_rate
+display_resolution
+display_description
+weight
+warranty
+price
+about_laptop -->
+
 
 <?php
     }else{
