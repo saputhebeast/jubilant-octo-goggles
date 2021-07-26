@@ -12,7 +12,7 @@
     $password = $_POST['password'];
     $confirmPassword = $_POST['re-password'];
 
-    if ((empty($first_name)) && (empty($last_name)) && (empty($email)) && (empty($password)) && (empty($confirmPassword))) {
+    if ((empty($first_name)) | (empty($last_name)) | (empty($email)) | (empty($password)) | (empty($confirmPassword))) {
         header("Location: admin-manage-add.php?error=empty blanks not valid");
         exit();
     }elseif($password !== $confirmPassword){
