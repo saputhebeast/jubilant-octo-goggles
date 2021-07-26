@@ -72,7 +72,7 @@
                     echo "<td>{$row['warranty']}</td>";
                     echo "<td>{$row['price']}</td>";
                     echo "<td>{$row['about_laptop']}</td>";
-                    echo "<td><a href=#?laptop_id=$row[laptop_id]'>Edit</a> | <a href='#?laptop_id=$row[laptop_id]'>Delete</a></td>";
+                    echo "<td><a href='admin-manage-item-edit-laptop.php?laptop_id=$row[laptop_id]'>Edit</a> | <a href='admin-manage-laptop-delete.php?laptop_id=$row[laptop_id]'>Delete</a></td>";
                     echo "</tr>";
                 }
             }

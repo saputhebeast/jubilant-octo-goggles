@@ -6,8 +6,6 @@
 ?>
 
 <?php
-    require "../resources/config.php";
-
     $customer_id = $_GET['customer_id'];
     $_SESSION['customer_id'] = $customer_id;
     
