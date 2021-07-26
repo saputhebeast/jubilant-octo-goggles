@@ -37,10 +37,10 @@
     //     header("Location: admin-manage-item-add-laptop.php?error=only png files are allowed");
     //     exit();
     // }else{
-    move_uploaded_file($_FILES["image"]["tmp_name"], $target);
+    //move_uploaded_file($_FILES["image"]["tmp_name"], $target);
 
-    $sql = "UPDATE laptop SET laptop_brand = '$laptop_brand', laptop_model = '$laptop_model', image = '$target', processor = '$processor', processor_model = '$processor_model', gpu = '$gpu', ram = '$ram', laptop_storage = '$laptop_storage', refresh_rate = '$refresh_rate', display_resolution = '$display_resolution', display_description = '$display_description', weight = '$weight', warranty = '$warranty', price = '$price', about_laptop = '$about_laptop' WHERE laptop_id = '$laptop_id';";
-    mysqli_query($conn, $sql);
+    //$sql = "UPDATE laptop SET laptop_brand = '$laptop_brand', laptop_model = '$laptop_model', image = '$target', processor = '$processor', processor_model = '$processor_model', gpu = '$gpu', ram = '$ram', laptop_storage = '$laptop_storage', refresh_rate = '$refresh_rate', display_resolution = '$display_resolution', display_description = '$display_description', weight = '$weight', warranty = '$warranty', price = '$price', about_laptop = '$about_laptop' WHERE laptop_id = '$laptop_id';";
+    //mysqli_query($conn, $sql);
     // if (mysqli_affected_rows($conn) > 0) {
     //     echo "<script type='text/javascript'>";
     //     echo "alert('Laptop Added Successfully');";
