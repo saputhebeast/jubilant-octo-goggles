@@ -46,7 +46,7 @@
         echo "<p>$gpu</p>";
         echo "<p>$weight</p>";
         echo "<p>$warranty"." Years Warranty</p>";
-        echo "<h2>LKR: ".$price."</h2>";
+        echo "<h2>Rs: ".$price."</h2>";
         echo "<a href='#'>Buy Now</a>";
         echo " | ";
         echo "<a href='#'> Add to Cart</a>";

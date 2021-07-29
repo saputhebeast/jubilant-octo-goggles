@@ -1,4 +1,7 @@
-<?php require "../resources/config.php"?>
+<?php 
+    session_start();
+    require "../resources/config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,78 +9,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/user/user.css">
     <title>Home</title>
 </head>
 <body>
-    <style>
-        table{
-            width: 100%;
-            text-align: center;
-        }
-    </style>
-    <style>
-        * {box-sizing: border-box;}
-
-        body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .nav {
-        overflow: hidden;
-        background-color: #e9e9e9;
-        }
-
-        .nav a {
-        float: left;
-        display: block;
-        color: black;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        }
-
-        .nav a:hover {
-        background-color: #ddd;
-        color: black;
-        }
-
-        .nav .search-container {
-        float: right;
-        }
-
-        .nav input[type=text] {
-            width: 300px;
-            padding: 6px;
-            margin-top: 8px;
-            font-size: 17px;
-            border: none;
-        }
-
-        .nav .search-container button {
-        float: right;
-        padding: 6px 10px;
-        margin-top: 8px;
-        margin-right: 16px;
-        background: #ddd;
-        font-size: 17px;
-        border: none;
-        cursor: pointer;
-        }
-
-        .nav .search-container button:hover {
-        background: #ccc;
-        }
-    </style>
-    
     <div class="nav">
         <a href="#">Home</a>
         <a href="#">Laptops</a>
         <a href="#">Keyboards</a>
         <a href="#">Mouse</a>
         <a href="#">All Products</a>
-        <a href="#">Login</a>
+        <?php
+            if (isset($_SESSION['customer_id'])) {
+                echo "<a href='user-logout.php'>Logout</a>";
+            }else{
+                echo "<a href='user-login.php'>Login</a>";
+            }
+        ?>
         <div class="search-container">
             <form action="#">
                 <input type="text" placeholder="Search.." name="search">
