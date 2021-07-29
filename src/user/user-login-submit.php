@@ -13,10 +13,10 @@
         $password = validate($_POST['password']);
 
         if(empty($email)){
-            header('Location: admin.php?error=email is required');
+            header('Location: user-login.php?error=email is required');
             exit();
         }else if(empty($password)){
-            header('Location: admin.php?error=password is required');
+            header('Location: user-login.php?error=password is required');
             exit();
         }else{
     
