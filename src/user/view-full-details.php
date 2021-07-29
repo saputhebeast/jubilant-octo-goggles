@@ -36,6 +36,20 @@
 <body>  
     <?php
         echo "<h1>{$laptop_model}</h1>";
+        echo "<img src='$image'>";
+        echo "<p>$about_laptop</p><br>";
+        echo "<p>$laptop_model"." $processor</p>";
+        echo "<p> $processor"." $processor_model</p>";
+        echo "<p>$ram</p>";
+        echo "<p>$laptop_storage</p>";
+        echo "<p>$display_resolution, "."$display_description</p>";
+        echo "<p>$gpu</p>";
+        echo "<p>$weight</p>";
+        echo "<p>$warranty"." Years Warranty</p>";
+        echo "<h2>LKR: ".$price."</h2>";
+        echo "<a href='#'>Buy Now</a>";
+        echo " | ";
+        echo "<a href='#'> Add to Cart</a>";
     ?>
 </body>
 </html>

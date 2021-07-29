@@ -153,7 +153,7 @@
                         <img src="<?php echo $row['image']?>" alt="" width="250px" height="250px">
                         <h3><?php echo $row['laptop_model']?></h3>
                         <h4><?php echo "RS: ".$row['price']?></h4>
-                        <a href="viewFullDetails.php?laptop_id=<?php echo $row['laptop_id']?>">Full Details</a>
+                        <a href="view-full-details.php?laptop_id=<?php echo $row['laptop_id']?>">Full Details</a>
                     </div>
                 </div>
                 <?php
