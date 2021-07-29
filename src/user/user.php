@@ -48,10 +48,11 @@
         }
 
         .nav input[type=text] {
-        padding: 6px;
-        margin-top: 8px;
-        font-size: 17px;
-        border: none;
+            width: 300px;
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
         }
 
         .nav .search-container button {
@@ -69,67 +70,14 @@
         background: #ccc;
         }
     </style>
-    <style>
-        .dropbtn {
-            background-color: #04AA6D;
-            color: white;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {background-color: #ddd;}
-
-        .dropdown:hover .dropdown-content {display: block;}
-
-        .dropdown:hover .dropbtn {background-color: #3e8e41;}
-
-        .top-nav{
-            margin-left: 10px;
-        }
-    </style>
-    <div class="top-nav">
-        <h1>Laptop Shop</h1>
-        <div class="dropdown">
-            <a href="#">
-                <img src="https://img.icons8.com/material-outlined/24/000000/fast-cart.png"/>
-            </a>
-            <img src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png" class="dropbtn"/>
-            <div class="dropdown-content">
-                <a href="#">Login</a>
-                <a href="#">Sign Up</a>
-                <a href="#">Change Setting</a>
-                <a href="#">Change Password</a>
-            </div>
-        </div>
-    </div>
     
     <div class="nav">
+        <a href="#">Home</a>
         <a href="#">Laptops</a>
-        <a href="#">Keyboard</a>
-        <a href="#">Login</a>
+        <a href="#">Keyboards</a>
+        <a href="#">Mouse</a>
         <a href="#">All Products</a>
+        <a href="#">Login</a>
         <div class="search-container">
             <form action="#">
                 <input type="text" placeholder="Search.." name="search">
@@ -137,10 +85,12 @@
             </form>
         </div>
     </div>
-    <h1>Laptop Detail</h1>
+
+    <h1>Asus Laptop</h1>
+    <a href="view-more.php?laptop_brand=Asus">View More Asus Laptops</a>
     <table>
     <?php
-        $sql = "SELECT * FROM laptop LIMIT 3";
+        $sql = "SELECT * FROM laptop WHERE laptop_brand = 'Asus' LIMIT 3";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -162,5 +112,62 @@
             echo "</tr>";
         }
     ?>
+    </table>
+
+    <h1>Acer Laptop</h1>
+    <a href="view-more.php?laptop_brand=Acer">View More Acer Laptops</a>
+    <table>
+    <?php
+        $sql = "SELECT * FROM laptop WHERE laptop_brand = 'Acer' LIMIT 3";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            echo "<tr>";
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<td>";
+                ?>
+                <div class="row">
+                    <div class="column">
+                        <img src="<?php echo $row['image']?>" alt="" width="250px" height="250px">
+                        <h3><?php echo $row['laptop_model']?></h3>
+                        <h4><?php echo "RS: ".$row['price']?></h4>
+                        <a href="view-full-details.php?laptop_id=<?php echo $row['laptop_id']?>">Full Details</a>
+                    </div>
+                </div>
+                <?php
+                echo "</td>";
+            }
+            echo "</tr>";
+        }
+    ?>
+    </table>
+
+    <h1>MSI Laptop</h1>
+    <a href="view-more.php?laptop_brand=MSI">View More MSI Laptops</a>
+    <table>
+    <?php
+        $sql = "SELECT * FROM laptop WHERE laptop_brand = 'MSI' LIMIT 3";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            echo "<tr>";
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<td>";
+                ?>
+                <div class="row">
+                    <div class="column">
+                        <img src="<?php echo $row['image']?>" alt="" width="250px" height="250px">
+                        <h3><?php echo $row['laptop_model']?></h3>
+                        <h4><?php echo "RS: ".$row['price']?></h4>
+                        <a href="view-full-details.php?laptop_id=<?php echo $row['laptop_id']?>">Full Details</a>
+                    </div>
+                </div>
+                <?php
+                echo "</td>";
+            }
+            echo "</tr>";
+        }
+    ?>
+    </table>
 </body>
 </html>
