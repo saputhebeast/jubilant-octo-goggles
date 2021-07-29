@@ -151,9 +151,9 @@
                 <div class="row">
                     <div class="column">
                         <img src="<?php echo $row['image']?>" alt="" width="250px" height="250px">
-                        <h2><?php echo $row['laptop_brand']?></h2>
+                        <h3><?php echo $row['laptop_model']?></h3>
                         <h4><?php echo "RS: ".$row['price']?></h4>
-                        <button class="btn btn-success">View Full Detail</button>
+                        <a href="viewFullDetails.php?laptop_id=<?php echo $row['laptop_id']?>">Full Details</a>
                     </div>
                 </div>
                 <?php
