@@ -31,7 +31,7 @@
                 <td><?php echo $value['item_quantity']?></td>
                 <td><?php echo number_format($value['item_price'], 2)?></td>
                 <td><?php echo number_format($value['item_quantity'] * $value['item_price'], 2);?></td>
-                <td><a href="cart-item-delete.php?action=delete&id=<?php echo $value['laptop_id']?>">Delete</a> | <a href="cart.php?action=edit&id=<?php echo $value['laptop_id']?>">Edit</a></td>
+                <td><a href="cart-item-delete.php?action=delete&id=<?php echo $value['laptop_id']?>">Delete</a></td>
             </tr>
         <?php 
             $total = $total + ($value['item_quantity'] * $value['item_price']);

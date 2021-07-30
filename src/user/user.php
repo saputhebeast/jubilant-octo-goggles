@@ -19,7 +19,7 @@
         <a href="#">Laptops</a>
         <a href="#">Keyboards</a>
         <a href="#">Mouse</a>
-        <a href="cart.php">Cart</a>
+        <a href="cart.php">Cart(<?php echo (isset($_SESSION['shopping_cart'])) ? count($_SESSION['shopping_cart']) : "0";?>)</a>
         <?php
             if (isset($_SESSION['customer_id'])) {
                 echo "<a href='user-logout.php'>Logout</a>";
