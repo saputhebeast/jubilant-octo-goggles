@@ -11,6 +11,7 @@
     <title>User Login</title>
 </head>
 <body>
+    <a href="user.php">Go back</a>
     <form action="user-login-submit.php" method="POST">
         <?php if (isset($_GET['error'])) { ?>
             <p class='error'><?php echo $_GET['error'] ?></p>
