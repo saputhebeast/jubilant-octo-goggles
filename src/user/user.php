@@ -19,7 +19,6 @@
         <a href="#">Laptops</a>
         <a href="#">Keyboards</a>
         <a href="#">Mouse</a>
-        <a href="#">All Products</a>
         <a href="cart.php">Cart</a>
         <?php
             if (isset($_SESSION['customer_id'])) {

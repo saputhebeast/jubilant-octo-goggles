@@ -49,9 +49,10 @@
         echo "<p>$warranty"." Years Warranty</p>";
         echo "<h2>Rs: ".$price."</h2>";
     ?>
-    <form action="cart-add.php?laptop_id=<?php echo $laptop_id?>" method="POST">
+    <form action="cart-item-add.php?laptop_id=<?php echo $laptop_id?>" method="POST">
         <input type="number" name="quantity" id="" min='0'>
         <input type="hidden" name="laptop_model" value="<?php echo $laptop_model?>">
+        <input type="hidden" name="laptop_image" value="<?php echo $image?>">
         <input type="hidden" name="price" value="<?php echo $price?>">
         <input type="submit" value="Add to Cart" name="add_to_cart">
     </form>

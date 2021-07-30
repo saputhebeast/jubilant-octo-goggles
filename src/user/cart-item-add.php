@@ -11,7 +11,7 @@
                     'laptop_model' => $_POST['laptop_model'],
                     'item_price' => $_POST['price'],
                     'item_quantity' => $_POST['quantity'],
-                    'image' => $_POST['image']
+                    'image' => $_POST['laptop_image']
                 );
                 $_SESSION['shopping_cart'][$count] = $item_array; 
             }else{
@@ -25,7 +25,7 @@
                 'laptop_model' => $_POST['laptop_model'],
                 'item_price' => $_POST['price'],
                 'item_quantity' => $_POST['quantity'],
-                'image' => $_POST['image']
+                'image' => $_POST['laptop_image']
             );
             $_SESSION['shopping_cart'][0] = $item_array;
         }
