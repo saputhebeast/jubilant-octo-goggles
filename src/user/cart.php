@@ -49,7 +49,7 @@
         ?>
         <tr>
             <td colspan="3" align="center">Total</td>
-            <td colspan="3" align="right">RS: <?php echo number_format($total, 2);?></td>
+            <td colspan="3" align="right">Rs: <?php echo number_format($total, 2);?></td>
         </tr>
         <?php
         }else{

@@ -91,6 +91,15 @@
                         </div>
                     </div>
                 </form>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-sm">
+                                <input type="submit" value="Add to Wishlist" name="wishlist" class="btn btn-warning">
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -13,6 +13,8 @@
                     'item_quantity' => $_POST['quantity'],
                     'image' => $_POST['laptop_image']
                 );
+                echo '<script>alert("Item Added Successfully");</script>';
+            echo '<script>window.location="user.php"</script>';
                 $_SESSION['shopping_cart'][$count] = $item_array; 
             }else{
                 echo '<script>alert("All ready added");</script>';
@@ -28,6 +30,8 @@
                 'image' => $_POST['laptop_image']
             );
             $_SESSION['shopping_cart'][0] = $item_array;
+            echo '<script>alert("Item Added Successfully");</script>';
+            echo '<script>window.location="user.php"</script>';
         }
     }
 ?>

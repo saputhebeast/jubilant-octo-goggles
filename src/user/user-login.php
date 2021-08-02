@@ -33,7 +33,15 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" onclick="showHidePassword()">
+                    <label class="form-check-label" for="show_password">
+                        Show Password
+                    </label>
+                </div>
             </div>
             <div class="form-group submit">
                 <button type="submit" class="btn btn-primary">Login</button>
@@ -41,6 +49,15 @@
             </div>
         </form>
     </div>
-
+    <script>
+        function showHidePassword(){
+            var val = document.getElementById('password');
+            if (val.type === 'password') {
+                val.type = 'text';
+            }else{
+                val.type = 'password';
+            }
+        }
+    </script>
 </body>
 </html>
