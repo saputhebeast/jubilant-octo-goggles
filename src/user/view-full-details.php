@@ -91,7 +91,7 @@
                         </div>
                     </div>
                 </form>
-                <form action="#" method="POST">
+                <form action="user-wishlist-add-item.php?item_id=<?php echo $laptop_id?>" method="POST">
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col-sm">

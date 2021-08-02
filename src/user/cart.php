@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +21,9 @@
         }
     </style>
     <?php require "header.php"?>
+    <div class="container">
+        <h1>My Cart</h1>
+    </div>
     <div class="container">
         <?php
             if (!empty($_SESSION['shopping_cart'])) {

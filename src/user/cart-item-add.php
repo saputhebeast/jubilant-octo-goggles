@@ -14,7 +14,7 @@
                     'image' => $_POST['laptop_image']
                 );
                 echo '<script>alert("Item Added Successfully");</script>';
-            echo '<script>window.location="user.php"</script>';
+                echo '<script>window.location="user.php"</script>';
                 $_SESSION['shopping_cart'][$count] = $item_array; 
             }else{
                 echo '<script>alert("All ready added");</script>';
