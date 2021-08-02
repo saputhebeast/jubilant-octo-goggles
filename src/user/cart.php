@@ -8,9 +8,22 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+        .container{
+            margin-top: 30px;
+        }
+
+        .container a:hover{
+            text-decoration: none;
+        }
+    </style>
     <?php require "header.php"?>
     <div class="container">
-    <table border="1">
+        <?php
+            if (!empty($_SESSION['shopping_cart'])) {
+                $total = 0;
+        ?>
+        <table class="table table-striped text-left">
         <tr>
             <th>Item Name</th>
             <th>Image</th>
@@ -20,8 +33,6 @@
             <th>Action</th> 
         </tr>
         <?php
-            if (!empty($_SESSION['shopping_cart'])) {
-                $total = 0;
                 foreach ($_SESSION['shopping_cart'] as $key => $value) {
         ?>
             <tr>
@@ -42,7 +53,15 @@
         </tr>
         <?php
         }else{
-            echo "No item in the cart";
+        ?>
+            <div class="container">
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">Your Shopping Cart is empty!</h4>
+                    <hr>
+                    <p class="mb-0">Don't miss out on great deals! Start shopping or log in to view products added.</p>
+                </div>
+            </div>
+        <?php
         }
         ?>
     </table>
