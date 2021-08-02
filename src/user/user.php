@@ -1,5 +1,4 @@
 <?php 
-    session_start();
     require "../resources/config.php";
 
 ?>
@@ -14,109 +13,74 @@
     <title>Home</title>
 </head>
 <body>
-    <div class="nav">
-        <a href="#">Home</a>
-        <a href="#">Laptops</a>
-        <a href="#">Keyboards</a>
-        <a href="#">Mouse</a>
-        <a href="cart.php">Cart(<?php echo (isset($_SESSION['shopping_cart'])) ? count($_SESSION['shopping_cart']) : "0";?>)</a>
-        <?php
-            if (isset($_SESSION['customer_id'])) {
-                echo "<a href='user-logout.php'>Logout</a>";
-            }else{
-                echo "<a href='user-login.php'>Login</a>";
-            }
-        ?>
-        <div class="search-container">
-            <form action="#">
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
+    <style>
+        img {
+            display:block;
+            margin:auto;
+        }
+        .btn a{
+            text-decoration: none;
+            color: black;
+        }
+        .btn a:hover{
+            text-decoration: none;
+            color: white;
+        }
+        .container{
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+        .more-details{
+            margin-top: 20px;
+        }
+        .col{
+            border: 2px solid black;
+        }
+    </style>
+
+    <?php require "header.php"?>
+    
+    <div class="laptop">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-left">Asus Laptops</h1>
+                </div>
+                <div class="col">
+                    <div style="text-align:right">
+                        <button class="btn btn-outline-secondary"><a href="view-more.php?laptop_brand=Acer" class="text-right">View More Asus Laptops</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <?php
+                $sql = "SELECT * FROM laptop WHERE laptop_brand = 'Asus' LIMIT 3";
+                $result = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($result) > 0) {
+                    echo "<div class='row'>";
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<div class='col'>";
+                        ?>
+                        <div class="row">
+                            <div class="column">
+                                <img src="<?php echo $row['image']?>" alt="" width="250px" height="250px">
+                                <h4 class="text-center"><?php echo $row['laptop_model']?></h4>
+                                <h5 class="text-center"><?php echo "RS: ".number_format($row['price'], 2)?></h5>
+                                <div class="more-details" style="text-align:center">
+                                    <button class="btn btn-outline-danger"><a href="view-full-details.php?laptop_id=<?php echo $row['laptop_id']?>">Full Details</a></button>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                        echo "</div>";
+                    }
+                    echo "</div>";
+                }
+            ?>
         </div>
     </div>
-
-    <h1>Asus Laptop</h1>
-    <a href="view-more.php?laptop_brand=Asus">View More Asus Laptops</a>
-    <table>
-    <?php
-        $sql = "SELECT * FROM laptop WHERE laptop_brand = 'Asus' LIMIT 3";
-        $result = mysqli_query($conn, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-            echo "<tr>";
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<td>";
-                ?>
-                <div class="row">
-                    <div class="column">
-                        <img src="<?php echo $row['image']?>" alt="" width="250px" height="250px">
-                        <h3><?php echo $row['laptop_model']?></h3>
-                        <h4><?php echo "RS: ".$row['price']?></h4>
-                        <a href="view-full-details.php?laptop_id=<?php echo $row['laptop_id']?>">Full Details</a>
-                    </div>
-                </div>
-                <?php
-                echo "</td>";
-            }
-            echo "</tr>";
-        }
-    ?>
-    </table>
-
-    <h1>Acer Laptop</h1>
-    <a href="view-more.php?laptop_brand=Acer">View More Acer Laptops</a>
-    <table>
-    <?php
-        $sql = "SELECT * FROM laptop WHERE laptop_brand = 'Acer' LIMIT 3";
-        $result = mysqli_query($conn, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-            echo "<tr>";
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<td>";
-                ?>
-                <div class="row">
-                    <div class="column">
-                        <img src="<?php echo $row['image']?>" alt="" width="250px" height="250px">
-                        <h3><?php echo $row['laptop_model']?></h3>
-                        <h4><?php echo "RS: ".$row['price']?></h4>
-                        <a href="view-full-details.php?laptop_id=<?php echo $row['laptop_id']?>">Full Details</a>
-                    </div>
-                </div>
-                <?php
-                echo "</td>";
-            }
-            echo "</tr>";
-        }
-    ?>
-    </table>
-
-    <h1>MSI Laptop</h1>
-    <a href="view-more.php?laptop_brand=MSI">View More MSI Laptops</a>
-    <table>
-    <?php
-        $sql = "SELECT * FROM laptop WHERE laptop_brand = 'MSI' LIMIT 3";
-        $result = mysqli_query($conn, $sql);
-
-        if (mysqli_num_rows($result) > 0) {
-            echo "<tr>";
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<td>";
-                ?>
-                <div class="row">
-                    <div class="column">
-                        <img src="<?php echo $row['image']?>" alt="" width="250px" height="250px">
-                        <h3><?php echo $row['laptop_model']?></h3>
-                        <h4><?php echo "RS: ".$row['price']?></h4>
-                        <a href="view-full-details.php?laptop_id=<?php echo $row['laptop_id']?>">Full Details</a>
-                    </div>
-                </div>
-                <?php
-                echo "</td>";
-            }
-            echo "</tr>";
-        }
-    ?>
-    </table>
 </body>
 </html>

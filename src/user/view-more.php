@@ -10,6 +10,7 @@
     <title>Document</title>
 </head>
 <body>
+    <?php require "header.php"?>
     <?php
         $laptop_brand = $_GET['laptop_brand'];
         echo $laptop_brand;

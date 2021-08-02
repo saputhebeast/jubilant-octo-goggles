@@ -7,6 +7,7 @@
     <title>User Signup</title>
 </head>
 <body>
+    <?php require "header.php"?>
     <a href="user-login.php">Go back to login</a>
     <form action="user-signup-submit.php" method="POST">
         <?php if (isset($_GET['error'])) { ?>

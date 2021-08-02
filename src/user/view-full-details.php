@@ -34,7 +34,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $laptop_model?></title>
 </head>
-<body>  
+<body> 
+    <?php require "header.php"?>
     <?php
         echo "<h1>{$laptop_model}</h1>";
         echo "<img src='$image'>";
