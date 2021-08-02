@@ -44,6 +44,7 @@
                         <a class="dropdown-item" href="#">Corsair Keyboards</a>
                         <a class="dropdown-item" href="#">Hyperx Keyboards</a>
                         <a class="dropdown-item" href="#">Logitech Keyboards</a>
+                        <a class="dropdown-item" href="#">Razor Keyboards</a>
                         <a class="dropdown-item" href="#">Stealth Series Keyboards</a>
                     </div>
                 </li>
@@ -56,6 +57,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Corsair Mice</a>
                         <a class="dropdown-item" href="#">Logitech Mice</a>
+                        <a class="dropdown-item" href="#">Razor Mice</a>
                         <a class="dropdown-item" href="#">Stealth Series Mice</a>
                     </div>
                 </li>
@@ -70,9 +72,8 @@
                     Profile
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">View Profile</a>
+                        <a class="dropdown-item" href="user-view-profile.php">View Profile</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
                         <?php
                         if (isset($_SESSION['customer_id'])) {
                             echo "<a class='dropdown-item' href='user-logout.php'>Logout</a>";
@@ -81,9 +82,9 @@
                         }
                         ?>
                         </a>
-                        <a class="dropdown-item" href="#">My Wishlist</a>
-                        <a class="dropdown-item" href="#">My Orders</a>
-                        <a class="dropdown-item" href="#">Change Password</a>
+                        <a class="dropdown-item" href="user-wishlist.php">My Wishlist</a>
+                        <a class="dropdown-item" href="user-orders.php">My Orders</a>
+                        <a class="dropdown-item" href="user-change-password.php">Change Password</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -92,6 +93,7 @@
             </ul>
         </div>
     </nav>
+    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
