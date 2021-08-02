@@ -34,31 +34,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $laptop_model?></title>
 </head>
-<body> 
+<body>
+    <style>
+        img {
+            display:block;
+            margin:auto;
+        }
+    </style> 
     <?php require "header.php"?>
-    <?php
-        echo "<h1>{$laptop_model}</h1>";
-        echo "<img src='$image'>";
-        echo "<p>$about_laptop</p><br>";
-        echo "<p>$laptop_model"." $processor</p>";
-        echo "<p> $processor"." $processor_model</p>";
-        echo "<p>$ram</p>";
-        echo "<p>$laptop_storage</p>";
-        echo "<p>$display_resolution, "."$display_description</p>";
-        echo "<p>$gpu</p>";
-        echo "<p>$weight</p>";
-        echo "<p>$warranty"." Years Warranty</p>";
-        echo "<h2>Rs: ".$price."</h2>";
-    ?>
-    <form action="cart-item-add.php?laptop_id=<?php echo $laptop_id?>" method="POST">
-        <input type="number" name="quantity" id="" min='0'>
-        <input type="hidden" name="laptop_model" value="<?php echo $laptop_model?>">
-        <input type="hidden" name="laptop_image" value="<?php echo $image?>">
-        <input type="hidden" name="price" value="<?php echo $price?>">
-        <input type="submit" value="Add to Cart" name="add_to_cart">
-    </form>
-    <form action="#" method="POST">
-    <input type="submit" value="Buy Now" name="buy">
-    </form>
+
+    <div class="jumbotron jumbotron-fluid bg-muted">
+        <div class="container">
+            <h1 class="display-4"><?php echo $laptop_model?></h1>
+            <p class="lead"><?php echo $about_laptop?></p>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <?php echo "<img src='$image'>"?>
+            </div>
+            <div class="col-sm">
+                <?php
+                    echo "<p>$laptop_model"." $processor</p>";
+                    echo "<p> $processor"." $processor_model</p>";
+                    echo "<p>$ram</p>";
+                    echo "<p>$laptop_storage</p>";
+                    echo "<p>$display_resolution, "."$display_description</p>";
+                    echo "<p>$gpu</p>";
+                    echo "<p>$weight</p>";
+                    echo "<p>$warranty"." Years Warranty</p>";
+                    echo "<h1>Rs: ".number_format($price, 2)."</h1>";
+                ?>
+                <form action="cart-item-add.php?laptop_id=<?php echo $laptop_id?>" method="POST">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-sm-2">
+                                <input class="form-control" type="number" name="quantity" id="" min='0' required placeholder="Quantity">
+                                <input type="hidden" name="laptop_model" value="<?php echo $laptop_model?>">
+                                <input type="hidden" name="laptop_image" value="<?php echo $image?>">
+                                <input type="hidden" name="price" value="<?php echo $price?>">
+                            </div>
+                            <div class="col-sm">
+                                <input type="submit" value="Add to Cart" name="add_to_cart" class="btn btn-primary">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-sm">
+                                <input type="submit" value="Buy Now" name="buy" class="btn btn-danger">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

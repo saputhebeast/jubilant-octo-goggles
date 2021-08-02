@@ -26,6 +26,13 @@
 
     <?php require "header.php"?>
 
+    <div class="jumbotron jumbotron-fluid bg-muted">
+        <div class="container">
+            <h1 class="display-4">All Laptops</h1>
+            <p class="lead">All Laptop Brands in One Place</p>
+        </div>
+    </div>
+
     <!-- all laptop -->
     <div class="laptop">
         <div class="container">

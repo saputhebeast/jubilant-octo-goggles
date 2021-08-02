@@ -15,9 +15,6 @@
         .container{
             margin: 30px;
         }
-        .submit{
-            border: 2px solid black;
-        }
         .submit a:hover{
             text-decoration: none;
         }

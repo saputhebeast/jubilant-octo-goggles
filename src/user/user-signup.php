@@ -11,6 +11,9 @@
         .container{
             margin-top: 30px;
         }
+        .container a:hover{
+            text-decoration: none;
+        }
     </style>
     <?php require "header.php"?>
     <div class="container">

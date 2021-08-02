@@ -35,7 +35,7 @@
 
     <?php require "header.php"?>
 
-    <div class="jumbotron jumbotron-fluid bg-info">
+    <div class="jumbotron jumbotron-fluid bg-muted">
         <div class="container">
             <h1 class="display-4"><?php echo $laptop_brand?> Laptops</h1>
             <p class="lead"><?php echo $tagline?></p>
