@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Signup</title>
+    <title>Signup</title>
 </head>
 <body>
     <style>
@@ -47,7 +47,7 @@
             </div>
             <div class="form-group">
                 <label for="street_address">Street Address</label>
-                <input type="text" class="form-control" placeholder="Address" name="street">
+                <input type="text" class="form-control" placeholder="Address" name="street_address">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">

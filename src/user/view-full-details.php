@@ -1,6 +1,6 @@
 <?php 
     require "../resources/config.php";
-
+    session_start();
     $laptop_id = $_GET['laptop_id'];
     $sql = "SELECT * FROM laptop WHERE laptop_id = $laptop_id";
     $result = mysqli_query($conn, $sql);

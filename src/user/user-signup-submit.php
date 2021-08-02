@@ -7,7 +7,7 @@
     
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
-    $street_address = $_POST['street'];
+    $street_address = $_POST['street_address'];
     $city = $_POST['city'];
     $postal_code = $_POST['postal_code'];
     $phone = $_POST['phone'];
