@@ -35,7 +35,7 @@
                 </div>
                 <div class="col">
                     <div style="text-align:right">
-                        <a href="view-more.php?laptop_brand=Acer" class="text-right btn btn-primary">View More Acer Laptops</a>
+                        <a href="view-more-laptop.php?laptop_brand=Acer" class="text-right btn btn-primary">View More Acer Laptops</a>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="col">
                     <div style="text-align:right">
-                        <a href="view-more.php?laptop_brand=Asus" class="text-right btn btn-primary">View More Asus Laptops</a>
+                        <a href="view-more-laptop.php?laptop_brand=Asus" class="text-right btn btn-primary">View More Asus Laptops</a>
                     </div>
                 </div>
             </div>
@@ -127,7 +127,7 @@
                 </div>
                 <div class="col">
                     <div style="text-align:right">
-                        <a href="view-more.php?laptop_brand=MSI" class="text-right btn btn-primary">View More MSI Laptops</a>
+                        <a href="view-more-laptop.php?laptop_brand=MSI" class="text-right btn btn-primary">View More MSI Laptops</a>
                     </div>
                 </div>
             </div>

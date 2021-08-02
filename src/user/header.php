@@ -20,18 +20,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">All Products</a>
+                    <a class="nav-link" href="user-all-products.php">All Products</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Laptops
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">All Laptop Brands</a>
+                        <a class="dropdown-item" href="user-all-laptop.php">All Laptop Brands</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Acer Laptops</a>
-                        <a class="dropdown-item" href="#">Asus Laptops</a>
-                        <a class="dropdown-item" href="#">MSI Laptops</a>
+                        <a class="dropdown-item" href="view-more-laptop.php?laptop_brand=Acer">Acer Laptops</a>
+                        <a class="dropdown-item" href="view-more-laptop.php?laptop_brand=Asus">Asus Laptops</a>
+                        <a class="dropdown-item" href="view-more-laptop.php?laptop_brand=MSI">MSI Laptops</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
