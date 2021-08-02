@@ -11,17 +11,36 @@
     <title>User Login</title>
 </head>
 <body>
+    <style>
+        .form{
+            margin: 30px;
+        }
+        .submit{
+            border: 2px solid black;
+        }
+        .submit a:hover{
+            text-decoration: none;
+        }
+    </style>
     <?php require "header.php"?>
-    <div class="container">
+
+    <div class="container form">
         <form action="user-login-submit.php" method="POST">
-            <?php if (isset($_GET['error'])) { ?>
-                <p class='error'><?php echo $_GET['error'] ?></p>
-            <?php } ?>
-            <label for="">Username: </label><input type="email" name="email" id=""><br>
-            <label for="">Password: </label><input type="password" name="password" id=""><br>
-            <input type="submit" value="Login">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group submit">
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a href="user-signup.php" style="float: right">I don't have a account.</a>
+            </div>
         </form>
-        <a href="user-signup.php">I don't have a account.</a>
     </div>
+
 </body>
 </html>
