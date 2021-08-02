@@ -70,6 +70,10 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="user-view-profile.php">View Profile</a>
                         <div class="dropdown-divider"></div>
+                        </a>
+                        <a class="dropdown-item" href="user-wishlist.php">My Wishlist</a>
+                        <a class="dropdown-item" href="user-orders.php">My Orders</a>
+                        <a class="dropdown-item" href="user-change-password.php">Change Password</a>
                         <?php
                         if (isset($_SESSION['customer_id'])) {
                             echo "<a class='dropdown-item' href='user-logout.php'>Logout</a>";
@@ -77,10 +81,6 @@
                             echo "<a class='dropdown-item' href='user-login.php'>Login</a>";
                         }
                         ?>
-                        </a>
-                        <a class="dropdown-item" href="user-wishlist.php">My Wishlist</a>
-                        <a class="dropdown-item" href="user-orders.php">My Orders</a>
-                        <a class="dropdown-item" href="user-change-password.php">Change Password</a>
                     </div>
                 </li>
                 <li class="nav-item">

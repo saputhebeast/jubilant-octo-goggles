@@ -26,6 +26,9 @@
         }
     </style>
     <div class="container">
+        <h1><?php echo ucfirst($first_name)?>'s Profile</h1>
+    </div>
+    <div class="container">
         <form action="user-view-profile-edit.php" method="POST">
             <?php if (isset($_GET['error'])) { ?>
                 <p class="alert alert-danger text-center"><?php echo $_GET['error']; ?></p>
