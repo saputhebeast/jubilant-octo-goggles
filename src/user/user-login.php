@@ -12,7 +12,7 @@
 </head>
 <body>
     <style>
-        .form{
+        .container{
             margin: 30px;
         }
         .submit{
@@ -25,6 +25,9 @@
     <?php require "header.php"?>
 
     <div class="container form">
+        <?php if (isset($_GET['error'])) { ?>
+            <p class="alert alert-danger text-center"><?php echo $_GET['error']; ?></p>
+        <?php } ?>
         <form action="user-login-submit.php" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
@@ -37,7 +40,7 @@
             </div>
             <div class="form-group submit">
                 <button type="submit" class="btn btn-primary">Login</button>
-                <a href="user-signup.php" style="float: right">I don't have a account.</a>
+                <a class="text-primary" href="user-signup.php" style="float: right">I don't have a account.</a>
             </div>
         </form>
     </div>
