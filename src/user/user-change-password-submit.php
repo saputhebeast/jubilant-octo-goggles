@@ -46,7 +46,7 @@
 ?>
 <?php
     }else{
-        header("Location: admin.php");
+        header("Location: user.php");
         exit();
     }
 ?>

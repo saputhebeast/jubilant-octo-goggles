@@ -60,7 +60,7 @@
         <tr>
             <td colspan="1" class="text-right">Total</td>
             <td colspan="2" class="text-right">Rs: <?php echo number_format($total, 2);?></td>
-            <td colspan="3" class="text-center"><a href="user-checkout-shipping.php" class="btn btn-warning">Checkout</a></td>
+            <td colspan="3" class="text-center"><a href="user-checkout-shipping.php" class="btn btn-primary">Checkout All Items</a></td>
         </tr>
         <?php
         }else{

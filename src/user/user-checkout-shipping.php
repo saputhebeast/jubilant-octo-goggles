@@ -30,7 +30,7 @@
         <h1>Shipping Details</h1>
     </div>
     <div class="container">
-        <form action="user-checkout-payment.php" method="POST">
+        <form action="user-checkout-shipping-submit.php" method="POST">
             <?php if (isset($_GET['error'])) { ?>
                 <p class="alert alert-danger text-center"><?php echo $_GET['error']; ?></p>
             <?php } ?>
@@ -70,7 +70,7 @@
                 <input type="checkbox" name="detailsCheck" id="" required> I hereby certify that the above details are true and correct
             </div>
             <div class="form-group submit">
-                <button type="submit" class="btn btn-primary">Continue to Payment</button>
+                <button type="submit" class="btn btn-primary btn-block">Continue to Payment</button>
             </div>
         </form>
     </div>
