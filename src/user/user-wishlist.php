@@ -16,7 +16,6 @@
         <h1><?php echo ucfirst($_SESSION['first_name'])?>'s Wishlist</h1>
     </div>
     <div class="container">
-        
                 <?php 
                     $sql = "SELECT * FROM wishlist WHERE customer_id = '$_SESSION[customer_id]'";
                     $result = mysqli_query($conn, $sql);
@@ -31,20 +30,15 @@
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
                 <?php
-                        while($row = mysqli_fetch_assoc($result)){
-                            echo "<tr>";
-                            echo "<td><a href='view-full-details.php?laptop_id=$row[item_id]'>{$row['item_name']}</a></td>";
-                            echo "<td><img src='$row[image]' width='100' height='100'></td>";
-                            $price = number_format($row['price'], 2);
-                            echo "<td>Rs: {$price}</td>";
-                            echo "<td><a href='user-wishlist-remove-item.php?item_id=$row[item_id]'>Delete</a></td>";
-                            echo "</tr>";
-                ?>
-                    </tbody>
-                </table>
-                <?php
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo "<tr>";
+                        echo "<td><a href='view-full-details.php?laptop_id=$row[item_id]'>{$row['item_name']}</a></td>";
+                        echo "<td><img src='$row[image]' width='100' height='100'></td>";
+                        $price = number_format($row['price'], 2);
+                        echo "<td>Rs: {$price}</td>";
+                        echo "<td><a href='user-wishlist-remove-item.php?item_id=$row[item_id]'>Delete</a></td>";
+                        echo "</tr>";
                         }
                     }else{
                 ?>

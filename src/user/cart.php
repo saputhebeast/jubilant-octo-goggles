@@ -31,12 +31,14 @@
         ?>
         <table class="table table-striped text-left">
         <tr>
-            <th>Item Name</th>
-            <th>Image</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Total</th>
-            <th>Action</th> 
+            <thead>
+                <th>Item Name</th>
+                <th>Image</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Action</th> 
+            </thead>
         </tr>
         <?php
                 foreach ($_SESSION['shopping_cart'] as $key => $value) {
@@ -45,17 +47,20 @@
                 <td><?php echo $value['laptop_model']?></td>
                 <td><img src="<?php echo $value['image']?>" alt="" width="100" height="100"></td>
                 <td><?php echo $value['item_quantity']?></td>
-                <td><?php echo number_format($value['item_price'], 2)?></td>
-                <td><?php echo number_format($value['item_quantity'] * $value['item_price'], 2);?></td>
+                <td>Rs: <?php echo number_format($value['item_price'], 2)?></td>
+                <td>Rs: <?php echo number_format($value['item_quantity'] * $value['item_price'], 2);?></td>
                 <td><a href="cart-item-delete.php?action=delete&id=<?php echo $value['laptop_id']?>">Delete</a></td>
             </tr>
         <?php 
             $total = $total + ($value['item_quantity'] * $value['item_price']);
             }
+            $_SESSION['total'] = $total;
         ?>
+
         <tr>
-            <td colspan="3" align="center">Total</td>
-            <td colspan="3" align="right">Rs: <?php echo number_format($total, 2);?></td>
+            <td colspan="1" class="text-right">Total</td>
+            <td colspan="2" class="text-right">Rs: <?php echo number_format($total, 2);?></td>
+            <td colspan="3" class="text-center"><a href="user-checkout-shipping.php" class="btn btn-warning">Checkout</a></td>
         </tr>
         <?php
         }else{
