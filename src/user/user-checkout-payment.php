@@ -44,6 +44,7 @@
         <div> <input type="submit" class="btn btn-primary btn-block" name="pay" value="Pay"></div>
     </form>
 </div>
+<?php require "footer.php"?>
 <?php
     }else{
         header("Location: user.php");

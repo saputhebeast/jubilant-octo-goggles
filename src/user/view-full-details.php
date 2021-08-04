@@ -82,7 +82,7 @@
                         </div>
                     </div>
                 </form>
-                <form action="#" method="POST">
+                <form action="user-buy-now.php" method="POST">
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col-sm">
@@ -103,5 +103,6 @@
             </div>
         </div>
     </div>
+    <?php require "footer.php"?>
 </body>
 </html>

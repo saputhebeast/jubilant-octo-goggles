@@ -28,7 +28,7 @@
 
     <div class="jumbotron jumbotron-fluid bg-muted">
         <div class="container">
-            <h1 class="display-4">All Items</h1>
+            <h1 class="display-4">All Products</h1>
             <p class="lead">All Items in One Place</p>
         </div>
     </div>
@@ -65,5 +65,6 @@
             ?>
         </div>
     </div>
+    <?php require "footer.php"?>
 </body>
 </html>

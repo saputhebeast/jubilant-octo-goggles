@@ -1,6 +1,6 @@
 <?php
-    $laptop_id = $_GET['laptop_id'];
     session_start();
+    $laptop_id = $_GET['laptop_id'];
     if (isset($_POST['add_to_cart'])) {
         if (isset($_SESSION['shopping_cart'])) {
             $item_array_id = array_column($_SESSION['shopping_cart'], 'laptop_id');

@@ -50,6 +50,7 @@
             </div>
         </form>
     </div>
+    <?php require "footer.php"?>
     <script>
         function showHidePassword(){
             var val = document.getElementById('password');
