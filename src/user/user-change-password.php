@@ -37,7 +37,6 @@
             </div>
         </form>
     </div>
-    <?php require "footer.php"?>
 <?php
     }else{
         header("Location: user.php");

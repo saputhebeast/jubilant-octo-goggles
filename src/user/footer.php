@@ -57,6 +57,13 @@
 
 
 <style>
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    footer{
+        margin-top: auto;
+    }
     #button-addon1 {
         color: #ffc371;
     }
