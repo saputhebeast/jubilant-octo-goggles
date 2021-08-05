@@ -1,0 +1,9 @@
+send email from xampp server
+
+requirements
+    gmail account (turn off two-factor authentication and turn on 'access for less secure apps settings')
+    smtp server address- smtp.gmail.com
+    port- 465
+    username- your gmail address
+    password- your gmail password
+    
