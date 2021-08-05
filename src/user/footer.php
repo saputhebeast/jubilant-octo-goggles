@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<footer class="bg-white">
+<footer class="bg-warning">
     <div class="container py-5">
         <div class="row py-4">
         <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
@@ -45,25 +45,22 @@
             </div>
         </div>
         </div>
-    </div>
-
-
-    <div class="bg-light py-4">
-        <div class="container text-center">
-        <p class="text-muted mb-0 py-2">© 2021 laptopcart.lk (Pvt) Ltd. All rights reserved.</p>
+        <div class="py-4">
+            <p class="text-center text-dark mb-0 py-2">© 2021 laptopcart.lk (Pvt) Ltd. All rights reserved.</p>
         </div>
     </div>
 </footer>
 
 
 <style>
-    body{
-        display: flex;
-        flex-direction: column;
+    main {
+        min-height: 80vh;
     }
-    footer{
-        margin-top: auto;
+    footer {
+        bottom: 0;
+        width: 100%;
     }
+
     #button-addon1 {
         color: #ffc371;
     }

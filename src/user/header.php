@@ -64,28 +64,33 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
             <ul class="navbar-nav mr-right">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Profile
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="user-view-profile.php">View Profile</a>
-                        <div class="dropdown-divider"></div>
+                <?php if (isset($_SESSION['customer_id'])){?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profile
                         </a>
-                        <a class="dropdown-item" href="user-wishlist.php">My Wishlist</a>
-                        <a class="dropdown-item" href="user-orders.php">My Orders</a>
-                        <a class="dropdown-item" href="user-change-password.php">Change Password</a>
-                        <?php
-                        if (isset($_SESSION['customer_id'])) {
-                            echo "<a class='dropdown-item' href='user-logout.php'>Logout</a>";
-                        }else{
-                            echo "<a class='dropdown-item' href='user-login.php'>Login</a>";
-                        }
-                        ?>
-                    </div>
-                </li>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="user-view-profile.php">View Profile</a>
+                            <div class="dropdown-divider"></div>
+                            </a>
+                            <a class="dropdown-item" href="user-wishlist.php">My Wishlist</a>
+                            <a class="dropdown-item" href="user-orders.php">My Orders</a>
+                            <a class="dropdown-item" href="user-change-password.php">Change Password</a>
+                            <a class="dropdown-item" href="user-delete-account.php">Delete Account</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.php">My Cart <span class="badge badge-danger"><?php echo (isset($_SESSION['shopping_cart'])) ? count($_SESSION['shopping_cart']) : "0";?></span></a>
+                    </li>
+                <?php } ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="cart.php">My Cart <span class="badge badge-danger"><?php echo (isset($_SESSION['shopping_cart'])) ? count($_SESSION['shopping_cart']) : "0";?></span></a>
+                    <?php
+                    if (isset($_SESSION['customer_id'])) {
+                        echo "<a class='nav-link' href='user-logout.php'>Logout</a>";
+                    }else{
+                        echo "<a class='nav-link' href='user-login.php'>Login</a>";
+                    }
+                    ?>
                 </li>
             </ul>
         </div>

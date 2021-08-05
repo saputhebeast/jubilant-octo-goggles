@@ -61,8 +61,6 @@
             ?>
         </div>
     </div>
-
-    
 <?php
     }else{
         header("Location: user.php");

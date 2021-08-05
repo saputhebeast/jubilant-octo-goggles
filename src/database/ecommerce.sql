@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2021 at 09:17 PM
+-- Generation Time: Aug 05, 2021 at 04:24 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.5
 
@@ -67,7 +67,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_id`, `first_name`, `last_name`, `street_address`, `city`, `postal_code`, `phone`, `email`, `password`) VALUES
-(1, 'Andrew', 'it21114458', 'Kandy Road,', 'Kiribathgoda', 11600, 768843142, 'andrew@gmail.com', 'andrew'),
+(1, 'Andrew', 'Perera', 'Kandy Road,', 'Kiribathgoda', 11600, 768843142, 'andrew@gmail.com', 'andrew'),
 (2, 'Tharinda', 'Darshaka', 'Udurawana', 'Kandy', 1100, 745875420, 'tharinda@gmail.com', 'tharinda123'),
 (4, 'Nimal', 'Perera', 'Temple Road, Horape', 'Ragama', 11010, 102456210, 'nimal@gmail.com', 'nimal'),
 (5, 'peter', 'parker', 'kandy road', 'malabe', 12021, 2147483647, 'peter@gmail.com', 'peter'),
@@ -132,6 +132,15 @@ CREATE TABLE `wishlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `wishlist`
+--
+
+INSERT INTO `wishlist` (`wItem_id`, `customer_id`, `item_id`, `item_name`, `image`, `price`) VALUES
+(13, '1', '1', 'Asus ROG Zephyrus Duo 15 SE GX551', '../images/laptop/Asus ROG Zephyrus Duo 15 SE GX551.png', '845000'),
+(14, '1', '8', 'Acer Predator Helios 300', '../images/laptop/Acer Predator Helios 300.png', '325000'),
+(15, '1', '6', 'Asus ROG Zephyrus G14 GA401IU', '../images/laptop/Asus ROG Zephyrus G14 GA401IU.png', '315000');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -185,7 +194,7 @@ ALTER TABLE `laptop`
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `wItem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `wItem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

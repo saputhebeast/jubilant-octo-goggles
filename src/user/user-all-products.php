@@ -25,46 +25,46 @@
     </style>
 
     <?php require "header.php"?>
-
     <div class="jumbotron jumbotron-fluid bg-muted">
         <div class="container">
             <h1 class="display-4">All Products</h1>
             <p class="lead">All Items in One Place</p>
         </div>
     </div>
+    <main>
+        <!-- all laptop -->
+        <div class="laptop">
+            <div class="container">
+                <?php
+                    $sql = "SELECT * FROM laptop";
+                    $result = mysqli_query($conn, $sql);
 
-    <!-- all laptop -->
-    <div class="laptop">
-        <div class="container">
-            <?php
-                $sql = "SELECT * FROM laptop";
-                $result = mysqli_query($conn, $sql);
-
-                if (mysqli_num_rows($result) > 0) {
-                    echo "<div class='row'>";
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<div class='col'>";
-                        ?>
-                        <div class="card mb-3" style="width: 20rem;">
-                            <div class="card text-center" style="width: 20rem;">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo $row['laptop_model']?></h5>
-                                <p class="card-text">
-                                    <img src="<?php echo $row['image']?>" alt="" width="250px" height="250px">
-                                    <?php echo "Rs: ".number_format($row['price'], 2)?>
-                                </p>
-                                <a href="view-full-details.php?laptop_id=<?php echo $row['laptop_id']?>" class="btn btn-primary">Full Details</a>
+                    if (mysqli_num_rows($result) > 0) {
+                        echo "<div class='row'>";
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<div class='col'>";
+                            ?>
+                            <div class="card mb-3" style="width: 20rem;">
+                                <div class="card text-center" style="width: 20rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo $row['laptop_model']?></h5>
+                                    <p class="card-text">
+                                        <img src="<?php echo $row['image']?>" alt="" width="250px" height="250px">
+                                        <?php echo "Rs: ".number_format($row['price'], 2)?>
+                                    </p>
+                                    <a href="view-full-details.php?laptop_id=<?php echo $row['laptop_id']?>" class="btn btn-primary">Full Details</a>
+                                </div>
+                                </div>
                             </div>
-                            </div>
-                        </div>
-                        <?php
+                            <?php
+                            echo "</div>";
+                        }
                         echo "</div>";
                     }
-                    echo "</div>";
-                }
-            ?>
+                ?>
+            </div>
         </div>
-    </div>
+    </main>
     <?php require "footer.php"?>
 </body>
 </html>

@@ -26,9 +26,20 @@
         mysqli_query($conn, $sql);
         
         if (mysqli_affected_rows($conn) > 0) {
+            $sql = "SELECT customer_id FROM customer WHERE email = '$email'";
+            $result = mysqli_query($conn, $sql);
+            if (mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+                    $customer_id = $row['customer_id'];
+                }
+            }
+            $_SESSION['first_name'] = $first_name;
+            $_SESSION['last_name'] = $last_name;
+            $_SESSION['customer_id'] = $customer_id;
+            $_SESSION['email'] = $email;
             echo "<script type='text/javascript'>";
             echo "alert('Account Created Successfully');";
-            echo "window.location.href = 'user-login.php'";
+            echo "window.location.href = 'user.php'";
             echo "</script>";
         }else{
             echo "<script type='text/javascript'>";

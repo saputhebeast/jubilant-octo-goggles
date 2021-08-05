@@ -21,7 +21,6 @@
         }
     </style>
     <?php require "header.php"?>
-
     <div class="container form">
         <?php if (isset($_GET['error'])) { ?>
             <p class="alert alert-danger text-center"><?php echo $_GET['error']; ?></p>
@@ -50,7 +49,6 @@
             </div>
         </form>
     </div>
-    <?php require "footer.php"?>
     <script>
         function showHidePassword(){
             var val = document.getElementById('password');
