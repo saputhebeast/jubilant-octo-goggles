@@ -59,9 +59,9 @@
                     </div>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <form action="user-search.php" class="form-inline my-2 my-lg-0" method="POST">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword" required>
+                <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value=" Search " name="search">
             </form>
             <ul class="navbar-nav mr-right">
                 <?php if (isset($_SESSION['customer_id'])){?>
