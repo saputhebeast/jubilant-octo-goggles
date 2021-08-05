@@ -65,7 +65,7 @@
             </div>
             <div class="form-group submit">
                 <button type="submit" class="btn btn-primary">Sign in</button>
-                <a class="text-primary" href="user-login.php" style="float: right">Go back to login.</a>
+                <a class="btn btn-link" href="user-login.php" style="float: right">Go Back to Login.</a>
             </div>
         </form>
     </div>
