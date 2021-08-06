@@ -4,6 +4,11 @@
 
     if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SESSION['last_name'])){
         require "header.php";
+        $sql = "SELECT * FROM laptop ORDER BY laptop_id ASC;";
+        $result = mysqli_query($conn, $sql);
+
+        $numberOfRows = $result->num_rows;
+        $results_per_page = 5;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +23,7 @@
     <style>
         .container{
             margin-top: 30px;
+            margin-bottom: 30px;
         }
         .alert-container{
             margin-bottom: 30px;
@@ -28,6 +34,24 @@
         tbody a{
             margin-right: 10px;
         }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        th, td {
+            white-space: nowrap;
+        }
+        .next{
+            margin-left: 10px;
+            margin-bottom: 30px;
+        }
     </style>
     <div class="container">
         <div class="alert-container alert alert-primary" role="alert">
@@ -36,36 +60,52 @@
         <div class="button-class">
             <a href="admin-manage-item-add-laptop.php" class="btn btn-primary">Add Laptop</a>
         </div>
-        <table class="table table-striped text-left">
-            <thead>
-            <tr>
-                <th>Laptop ID</th>
-                <th>Laptop Brand</th>
-                <th>Laptop Model</th>
-                <th>Image</th>
-                <th>Processor</th>
-                <th>Processor Model</th>
-                <th>GPU</th>
-                <th>RAM</th>
-                <th>Laptop Storage</th>
-                <th>Refresh Rate</th>
-                <th>Display Resolution</th>
-                <th>Display Description</th>
-                <th>Weight</th>
-                <th>Warranty</th>
-                <th>Price</th>
-                <th>About Laptop</th>
-                <th>Update</th>
-            </tr>
-            </thead>
-            <tbody>
+        <div style="overflow-x:auto;">
             <?php
-            $sql = "SELECT * FROM laptop ORDER BY laptop_id ASC;";
+//           echo $numberOfRows;
+            $number_of_pages = ceil($numberOfRows/ $results_per_page);
+
+            if (!isset($_GET['page'])){
+                $page = 1;
+            }else{
+                $page = $_GET['page'];
+            }
+
+            $this_page_first_result = ($page - 1) * $results_per_page;
+
+
+            $sql = "SELECT * FROM laptop ORDER BY laptop_id ASC LIMIT {$this_page_first_result}, {$results_per_page};";
             $result = mysqli_query($conn, $sql);
 
-            $numberOfRows = $result->num_rows;
-            if ($numberOfRows > 0) {
-                while($row = $result->fetch_assoc()){
+            $numberOfRowss = $result->num_rows;
+
+            if ($numberOfRowss > 0) {
+                ?>
+                <table class="table table-striped text-left">
+                    <thead>
+                    <tr>
+                        <th>Laptop ID</th>
+                        <th>Laptop Brand</th>
+                        <th>Laptop Model</th>
+                        <th>Image</th>
+                        <th>Processor</th>
+                        <th>Processor Model</th>
+                        <th>GPU</th>
+                        <th>RAM</th>
+                        <th>Laptop Storage</th>
+                        <th>Refresh Rate</th>
+                        <th>Display Resolution</th>
+                        <th>Display Description</th>
+                        <th>Weight</th>
+                        <th>Warranty</th>
+                        <th>Price</th>
+                        <th>About Laptop</th>
+                        <th>Update</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                <?php
+                while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>{$row['laptop_id']}</td>";
                     echo "<td>{$row['laptop_brand']}</td>";
@@ -85,12 +125,22 @@
                     echo "<td>{$row['about_laptop']}</td>";
                     echo "<td><a class='btn btn-warning' href='admin-manage-item-edit-laptop.php?laptop_id=$row[laptop_id]'>Edit</a><a class='btn btn-danger' href='admin-manage-laptop-delete.php?laptop_id=$row[laptop_id]'>Delete</a></td>";
                     echo "</tr>";
-                }
+                    }
+            }
+                ?>
+                    </tbody>
+                </table>
+        </div>
+        <div class="container d-flex justify-content-center">
+            <?php
+
+            for($page=1; $page<=$number_of_pages;$page++){
+                echo "<a class='btn btn-success next' href='admin-manage-item.php?page={$page}'> $page </a>";
             }
             ?>
-            </tbody>
-        </table>
+        </div>
     </div>
+
 </body>
 </html>
 <?php
