@@ -33,5 +33,7 @@
             echo '<script>alert("Item Added Successfully");</script>';
             echo '<script>window.location="user.php"</script>';
         }
+    }else if (isset($_POST['buy_now'])){
+        echo "buy now";
     }
 ?>

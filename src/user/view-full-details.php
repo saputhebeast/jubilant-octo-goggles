@@ -78,15 +78,7 @@
                             </div>
                             <div class="col-sm">
                                 <input type="submit" value="Add to Cart" name="add_to_cart" class="btn btn-primary">
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <form action="user-buy-now.php" method="POST">
-                    <div class="form-group">
-                        <div class="form-row">
-                            <div class="col-sm">
-                                <input type="submit" value="Buy Now" name="buy" class="btn btn-danger">
+                                <input type="submit" value="Buy Now" name="buy_now" class="btn btn-danger">
                             </div>
                         </div>
                     </div>

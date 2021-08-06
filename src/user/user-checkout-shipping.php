@@ -22,10 +22,56 @@
     }
     ?>
     <style>
-        .container{
+        .container {
             margin-top: 30px;
         }
+        .media-body a{
+            color: black;
+        }
+        .media-body a:hover{
+            text-decoration: none;
+        }
+        .card{
+            margin-bottom: 10px;
+        }
+        h6{
+            font-weight: normal;
+        }
     </style>
+    <div class="container">
+        <h1>Order Review</h1>
+    </div>
+    <div class="container">
+
+            <?php
+            foreach($_SESSION['shopping_cart'] as $key => $value){
+                ?>
+                <!--                    <div class="card-header">-->
+                <!--                    </div>-->
+        <div class="card">
+                <div class="card-body">
+                    <div class="media position-relative">
+                        <img src="<?php echo $value['image']?>" class="mr-3" alt="..." width="120" height="120">
+                        <div class="media-body">
+                            <h5 class="mt-0"><a href="view-full-details.php?laptop_id=<?php echo $value['laptop_id']?>"><?php echo $value['laptop_model']?></a></h5>
+                            <h6>Quantity: <?php echo $value['item_quantity']?></h6>
+                            <?php $price = number_format($value['item_price'], 2); ?>
+                            <h6>Laptop Price Rs: <?php echo $price?></h6>
+<!--                            <h6>Total Price Rs: --><?php //echo number_format($value['item_quantity'] * $value['item_price'], 2)?>
+                        </div>
+                    </div>
+                </div>
+        </div>
+                <?php
+            }
+            ?>
+        <div class="card">
+            <div class="card-body">
+                <?php $total = number_format($_SESSION['total'], 2);?>
+                Total Price Rs: <?php echo $total?>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <h1>Shipping Details</h1>
     </div>

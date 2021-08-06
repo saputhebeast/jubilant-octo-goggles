@@ -44,7 +44,7 @@
                 foreach ($_SESSION['shopping_cart'] as $key => $value) {
         ?>
             <tr>
-                <td><?php echo $value['laptop_model']?></td>
+                <td><a href="view-full-details.php?laptop_id=<?php echo $value['laptop_id']?>"><?php echo $value['laptop_model']?></a></td>
                 <td><img src="<?php echo $value['image']?>" alt="" width="100" height="100"></td>
                 <td><?php echo $value['item_quantity']?></td>
                 <td>Rs: <?php echo number_format($value['item_price'], 2)?></td>
