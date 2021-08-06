@@ -60,7 +60,7 @@
         <div class="button-class">
             <a href="admin-manage-item-add-laptop.php" class="btn btn-primary">Add Laptop</a>
         </div>
-        <div style="overflow-x:auto;">
+        <div style="overflow-x:auto;" class="container overflow-auto">
             <?php
 //           echo $numberOfRows;
             $number_of_pages = ceil($numberOfRows/ $results_per_page);
