@@ -30,14 +30,38 @@
     <title>Edit Records</title>
 </head>
 <body>
-    <a href="admin-manage.php">Go back to dashboard</a>
-    <form action="admin-manage-edit-submit.php" method="POST">
-        <label for="">Admin ID: </label><input type="text" name="admin_id" value = "<?php echo $admin_id?>" disabled><br>
-        <label for="">First Name: </label><input type="text" name="first_name" value = "<?php echo $first_name?>"><br>
-        <label for="">Last Name: </label><input type="text" name="last_name" value = "<?php echo $last_name?>"><br>
-        <label for="">Email: </label><input type="email" name="email" value = "<?php echo $email?>"><br>
-        <input type="submit" value="Update">
-    </form>
+    <style>
+        .container{
+            margin-top: 30px;
+        }
+        .alert-container{
+            margin-bottom: 30px;
+        }
+        .button-class{
+            margin-bottom: 30px;
+        }
+    </style>
+    <div class="container">
+        <div class="alert-container alert alert-primary" role="alert">
+            <h1 class="text-center">Edit Admin Details</h1>
+        </div>
+        <div class="button-class">
+            <a href="admin-manage.php" class="btn btn-primary">Go back to dashboard</a>
+        </div>
+        <form action="admin-manage-edit-submit.php" method="POST">
+            <div class="form-group">
+                <label for="">Admin ID: </label>
+                <input class="form-control" type="text" name="admin_id" value = "<?php echo $admin_id?>" disabled><br>
+                <label for="">First Name: </label>
+                <input class="form-control" type="text" name="first_name" value = "<?php echo $first_name?>"><br>
+                <label for="">Last Name: </label>
+                <input class="form-control" type="text" name="last_name" value = "<?php echo $last_name?>"><br>
+                <label for="">Email: </label>
+                <input class="form-control" type="email" name="email" value = "<?php echo $email?>"><br>
+            </div>
+            <input type="submit" value="Update" class="btn btn-warning">
+        </form>
+    </div>
 </body>
 </html>
 

@@ -40,27 +40,51 @@
     <title>Edit Records</title>
 </head>
 <body>
-    <a href="admin-manage-item.php">Go back to dashboard</a>
-    <form action="admin-manage-item-edit-laptop-submit.php" method="POST" enctype="multipart/form-data">
-        <h1>Make sure to add png file</h1>
-        <label for="">Laptop ID</label><input type="text" name="laptop_id" value="<?php echo $laptop_id?>" readonly><br>
-        <label for="">Laptop Brand: </label><input type="text" name="laptop_brand" value="<?php echo $laptop_brand?>"><br>
-        <label for="">Laptop Model: </label><input type="text" name="laptop_model" value = "<?php echo $laptop_model?>"><br>
-        <label for="">Processor: </label><input type="text" name="processor" value="<?php echo $processor?>"><br>
-        <label for="">Processor Model: </label><input type="text" name="processor_model" value = "<?php echo $processor_model?>"><br>
-        <label for="">GPU: </label><input type="text" name="gpu" value="<?php echo $gpu?>"><br>
-        <label for="">RAM: </label><input type="text" name="ram" value="<?php echo $ram?>"><br>
-        <label for="">Laptop Storage: </label><input type="text" name="laptop_storage" value="<?php echo $laptop_storage?>"><br>
-        <label for="">Refresh Rate: </label><input type="text" name="refresh_rate" value="<?php echo $refresh_rate?>"><br>
-        <label for="">Display Resolution: </label><input type="text" name="display_resolution" value="<?php echo $display_resolution?>"><br>
-        <label for="">Display Description: </label><input type="text" name="display_description" value = "<?php echo $display_description?>"><br>
-        <label for="">Weight: </label><input type="text" name="weight" value = "<?php echo $weight?>"><br>
-        <label for="">Warranty: </label><input type="text" name="warranty" value = "<?php echo $warranty?>"><br>
-        <label for="">Price: </label><input type="text" name="price" value = "<?php echo $price?>"><br>
-        <label for="">About Laptop: </label><br><textarea name="about_laptop" id="" cols="100" rows="10"><?php echo $about_laptop?></textarea><br>
-        <label for="">Image: </label><input type="file" name="image" value = "<?php echo $image?>"><br><?php echo $image?>
-        <input type="submit" value="Update">
-    </form>
+    <style>
+        .container{
+            margin-top: 30px;
+        }
+        .alert-container{
+            margin-bottom: 30px;
+        }
+        .button-class{
+            margin-bottom: 30px;
+        }
+        form{
+            margin-bottom: 30px;
+        }
+    </style>
+    <div class="container">
+        <div class="alert-container alert alert-primary" role="alert">
+            <h1 class="text-center">Update Laptop</h1>
+        </div>
+        <div class="button-class">
+            <a href="admin-manage-item.php" class="btn btn-primary">Go back to dashboard</a>
+        </div>
+        <form action="admin-manage-item-edit-laptop-submit.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="">Laptop ID</label><input class="form-control" type="text" name="laptop_id" value="<?php echo $laptop_id?>" readonly><br>
+                <label for="">Laptop Brand: </label><input class="form-control" type="text" name="laptop_brand" value="<?php echo $laptop_brand?>"><br>
+                <label for="">Laptop Model: </label><input class="form-control" type="text" name="laptop_model" value = "<?php echo $laptop_model?>"><br>
+                <label for="">Processor: </label><input class="form-control" type="text" name="processor" value="<?php echo $processor?>"><br>
+                <label for="">Processor Model: </label><input class="form-control" type="text" name="processor_model" value = "<?php echo $processor_model?>"><br>
+                <label for="">GPU: </label><input class="form-control" type="text" name="gpu" value="<?php echo $gpu?>"><br>
+                <label for="">RAM: </label><input class="form-control" type="text" name="ram" value="<?php echo $ram?>"><br>
+                <label for="">Laptop Storage: </label><input class="form-control" type="text" name="laptop_storage" value="<?php echo $laptop_storage?>"><br>
+                <label for="">Refresh Rate: </label><input class="form-control" type="text" name="refresh_rate" value="<?php echo $refresh_rate?>"><br>
+                <label for="">Display Resolution: </label><input class="form-control" type="text" name="display_resolution" value="<?php echo $display_resolution?>"><br>
+                <label for="">Display Description: </label><input class="form-control" type="text" name="display_description" value = "<?php echo $display_description?>"><br>
+                <label for="">Weight: </label><input class="form-control" type="text" name="weight" value = "<?php echo $weight?>"><br>
+                <label for="">Warranty: </label><input class="form-control" type="text" name="warranty" value = "<?php echo $warranty?>"><br>
+                <label for="">Price: </label><input class="form-control" type="text" name="price" value = "<?php echo $price?>"><br>
+                <label for="">About Laptop: </label><br><textarea class="form-control" name="about_laptop" id="" cols="100" rows="10"><?php echo $about_laptop?></textarea><br>
+                <label for="">Image: </label><input class="form-control" type="file" name="image" value = "<?php echo $image?>"><br><?php echo $image?>
+                <small class="form-text text-muted">Make sure to add png file.</small>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Update">
+        </form>
+    </div>
+
 </body>
 </html>
 

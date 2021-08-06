@@ -20,18 +20,43 @@
     <title>Edit Records</title>
 </head>
 <body>
-    <a href="admin-manage.php">Go back to dashboard</a>
-    <form action="admin-manage-add-submit.php" method="post">
-        <?php if (isset($_GET['error'])) { ?>
-            <p class="error"><?php echo $_GET['error']; ?></p>
-        <?php } ?>
-        <label for="">First Name: </label><input type="text" name="first_name" value = ""><br>
-        <label for="">Last Name: </label><input type="text" name="last_name" value = ""><br>
-        <label for="">Email: </label><input type="email" name="email" value = ""><br>
-        <label for="">Password: </label><input type="password" name="password" value = ""><br>
-        <label for="">Confirm Password: </label><input type="password" name="re-password" value = ""><br>
-        <input type="submit" value="Add Admin">
-    </form>
+    <style>
+        .container{
+            margin-top: 30px;
+        }
+        .alert-container{
+            margin-bottom: 30px;
+        }
+        .button-class{
+            margin-bottom: 30px;
+        }
+    </style>
+    <div class="container">
+        <div class="alert-container alert alert-primary" role="alert">
+            <h1 class="text-center">Add Admin</h1>
+        </div>
+        <div class="button-class">
+            <a href="admin-manage.php" class="btn btn-primary">Go back to dashboard</a>
+        </div>
+        <form action="admin-manage-add-submit.php" method="post">
+            <div class="form-group">
+                <?php if (isset($_GET['error'])) { ?>
+                    <p class="alert alert-danger text-center"><?php echo $_GET['error']; ?></p>
+                <?php } ?>
+                <label for="">First Name: </label>
+                <input class="form-control" type="text" name="first_name" value = ""><br>
+                <label for="">Last Name: </label>
+                <input class="form-control" type="text" name="last_name" value = ""><br>
+                <label for="">Email: </label>
+                <input class="form-control" type="email" name="email" value = ""><br>
+                <label for="">Password: </label>
+                <input class="form-control" type="password" name="password" value = ""><br>
+                <label for="">Confirm Password: </label>
+                <input class="form-control" type="password" name="re-password" value = ""><br>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Add Admin">
+        </form>
+    </div>
 </body>
 </html>
 

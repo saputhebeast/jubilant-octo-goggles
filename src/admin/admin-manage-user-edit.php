@@ -32,18 +32,50 @@
     <title>Edit Records</title>
 </head>
 <body>
-    <a href="admin-manage-user.php">Go back to dashboard</a>
-    <form action="admin-manage-user-edit-submit.php" method="POST">
-        <label for="">Customer ID: </label><input type="text" name="customer_id" value = "<?php echo $customer_id?>" disabled><br>
-        <label for="">First Name: </label><input type="text" name="first_name" value = "<?php echo $first_name?>"><br>
-        <label for="">Last Name: </label><input type="text" name="last_name" value = "<?php echo $last_name?>"><br>
-        <label for="">Street Address: </label><input type="text" name="street_address" value = "<?php echo $street_address?>"><br>
-        <label for="">City: </label><input type="text" name="city" value = "<?php echo $city?>"><br>
-        <label for="">Postal Code: </label><input type="text" name="postal_code" value = "<?php echo $postal_code?>"><br>
-        <label for="">Phone: </label><input type="text" name="phone" value = "<?php echo $phone?>"><br>
-        <label for="">Email: </label><input type="email" name="email" value = "<?php echo $email?>"><br>
-        <input type="submit" value="Update">
-    </form>
+    <style>
+        .container{
+            margin-top: 30px;
+        }
+        .alert-container{
+            margin-bottom: 30px;
+        }
+        .button-class{
+            margin-bottom: 30px;
+        }
+        form{
+            margin-bottom: 30px;
+        }
+    </style>
+    <div class="container">
+        <div class="alert-container alert alert-primary" role="alert">
+            <h1 class="text-center">Add User</h1>
+        </div>
+        <div class="button-class">
+            <a href="admin-manage-user.php" class="btn btn-primary">Go back to dashboard</a>
+        </div>
+        <form action="admin-manage-user-edit-submit.php" method="POST">
+            <div class="form-group">
+                <label for="">Customer ID: </label>
+                <input class="form-control" type="text" name="customer_id" value = "<?php echo $customer_id?>" disabled><br>
+                <label for="">First Name: </label>
+                <input class="form-control" type="text" name="first_name" value = "<?php echo $first_name?>"><br>
+                <label for="">Last Name: </label>
+                <input class="form-control" type="text" name="last_name" value = "<?php echo $last_name?>"><br>
+                <label for="">Street Address: </label>
+                <input class="form-control" type="text" name="street_address" value = "<?php echo $street_address?>"><br>
+                <label for="">City: </label>
+                <input class="form-control" type="text" name="city" value = "<?php echo $city?>"><br>
+                <label for="">Postal Code: </label>
+                <input class="form-control" type="text" name="postal_code" value = "<?php echo $postal_code?>"><br>
+                <label for="">Phone: </label>
+                <input class="form-control" type="text" name="phone" value = "<?php echo $phone?>"><br>
+                <label for="">Email: </label>
+                <input class="form-control" type="email" name="email" value = "<?php echo $email?>"><br>
+            </div>
+            <input class="btn btn-warning" type="submit" value="Update">
+        </form>
+    </div>
+
 </body>
 </html>
 
