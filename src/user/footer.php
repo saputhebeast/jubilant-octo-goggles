@@ -3,7 +3,7 @@
 <footer class="bg-light">
     <div class="container py-5">
         <div class="row py-4">
-        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <p class="font-italic text-muted">21, Kandy Road, Malabe. Sri Lanka.</p>
             <p class="font-italic text-muted">Follow us for exclusive discounts & new arrivals</p>
             <ul class="list-inline mt-4" style="font-size: 1.5rem;">

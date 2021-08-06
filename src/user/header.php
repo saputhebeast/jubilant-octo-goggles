@@ -79,10 +79,10 @@
                             <a class="dropdown-item" href="user-delete-account.php">Delete Account</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.php">My Cart <span class="badge badge-danger"><?php echo (isset($_SESSION['shopping_cart'])) ? count($_SESSION['shopping_cart']) : "0";?></span></a>
-                    </li>
                 <?php } ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.php">My Cart <span class="badge badge-danger"><?php echo (isset($_SESSION['shopping_cart'])) ? count($_SESSION['shopping_cart']) : "0";?></span></a>
+                </li>
                 <li class="nav-item">
                     <?php
                     if (isset($_SESSION['customer_id'])) {
