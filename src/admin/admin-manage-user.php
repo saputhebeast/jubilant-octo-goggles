@@ -3,6 +3,7 @@
     session_start();
 
     if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SESSION['last_name'])){
+        require "header.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,16 +15,6 @@
     <title>Admin-Dashboard</title>
 </head>
 <body>
-    <div class="nav">
-        <a href="admin-dashboard.php">Dashboard</a>
-        <a href="admin-manage.php">Manage Admin</a>
-        <a href="admin-manage-user.php" class="active">Manage User</a>
-        <a href="admin-manage-item.php">Manage Item</a>
-        <a href="#">Orders</a>
-        <div class="nav-right">
-            <a href="admin-logout.php">Logout</a>
-        </div>
-    </div>
     <h1>Manage User</h1>
     <a href="admin-manage-user-add.php">Add Customer</a>
 
