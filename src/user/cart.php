@@ -30,16 +30,16 @@
                 $total = 0;
         ?>
         <table class="table table-striped text-left">
-        <tr>
             <thead>
-                <th>Item Name</th>
-                <th>Image</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Total</th>
-                <th>Action</th> 
+                <tr>
+                    <th>Item Name</th>
+                    <th>Image</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
             </thead>
-        </tr>
         <?php
                 foreach ($_SESSION['shopping_cart'] as $key => $value) {
         ?>
