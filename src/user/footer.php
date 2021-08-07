@@ -55,16 +55,15 @@
 
 
 <style>
+    html, body{
+        height: 100%;
+    }
     main {
-        min-height: 80vh;
+        min-height: 100vh;
     }
     footer {
         bottom: 0;
         width: 100%;
-    }
-
-    #button-addon1 {
-        color: #ffc371;
     }
     i {
         color: blue;

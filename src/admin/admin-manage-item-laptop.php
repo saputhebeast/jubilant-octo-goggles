@@ -135,7 +135,7 @@
             <?php
 
             for($page=1; $page<=$number_of_pages;$page++){
-                echo "<a class='btn btn-success next' href='admin-manage-item.php?page={$page}'> $page </a>";
+                echo "<a class='btn btn-success next' href='admin-manage-item-laptop.php?page={$page}'> $page </a>";
             }
             ?>
         </div>

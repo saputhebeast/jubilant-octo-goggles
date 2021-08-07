@@ -59,10 +59,13 @@
             <h1 class="text-center">Update Laptop</h1>
         </div>
         <div class="button-class">
-            <a href="admin-manage-item.php" class="btn btn-primary">Go back to dashboard</a>
+            <a href="admin-manage-item-laptop.php" class="btn btn-primary">Go back to dashboard</a>
         </div>
         <form action="admin-manage-item-edit-laptop-submit.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
+                <?php if (isset($_GET['error'])) { ?>
+                    <p class="alert alert-danger"><?php echo $_GET['error']; ?></p>
+                <?php } ?>
                 <label for="">Laptop ID</label><input class="form-control" type="text" name="laptop_id" value="<?php echo $laptop_id?>" readonly><br>
                 <label for="">Laptop Brand: </label><input class="form-control" type="text" name="laptop_brand" value="<?php echo $laptop_brand?>"><br>
                 <label for="">Laptop Model: </label><input class="form-control" type="text" name="laptop_model" value = "<?php echo $laptop_model?>"><br>

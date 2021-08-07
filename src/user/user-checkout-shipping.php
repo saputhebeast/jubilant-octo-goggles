@@ -53,7 +53,7 @@
                     <div class="media position-relative">
                         <img src="<?php echo $value['image']?>" class="mr-3" alt="..." width="120" height="120">
                         <div class="media-body">
-                            <h5 class="mt-0"><a href="view-full-details.php?laptop_id=<?php echo $value['laptop_id']?>"><?php echo $value['laptop_model']?></a></h5>
+                            <h5 class="mt-0"><a href="view-full-laptop-details.php?laptop_id=<?php echo $value['laptop_id']?>"><?php echo $value['laptop_model']?></a></h5>
                             <h6>Quantity: <?php echo $value['item_quantity']?></h6>
                             <?php $price = number_format($value['item_price'], 2); ?>
                             <h6>Laptop Price Rs: <?php echo $price?></h6>

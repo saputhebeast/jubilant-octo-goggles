@@ -41,7 +41,7 @@
                             <h5 class="card-title"><?php echo $row['laptop_model']?></h5>
                             <img src="<?php echo $row['image']?>" width="150" height="150" alt="<?php echo $row['laptop_brand']?>">
                             <p class="card-text"><?php echo $row['about_laptop']?></p>
-                            <a href="view-full-details.php?laptop_id=<?php echo $row['laptop_id']?>" target="_blank" class="btn btn-primary">More Details</a>
+                            <a href="view-full-laptop-details.php?laptop_id=<?php echo $row['laptop_id']?>" target="_blank" class="btn btn-primary">More Details</a>
                         </div>
                     </div>
                 </div>

@@ -76,7 +76,7 @@
 
     <script>
         function showHidePassword(){
-            var val = document.getElementById('password');
+            const val = document.getElementById('password');
             if (val.type === 'password') {
                 val.type = 'text';
             }else{

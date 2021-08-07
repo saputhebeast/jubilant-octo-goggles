@@ -10,7 +10,7 @@
         $users = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM customer"));
         $laptops = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM laptop"));
         $orders = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM item_order"));
-        $keyboards = 0;
+        $keyboards = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM keyboard"));
         $mice = 0;
         $subscribers = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM newsletter"));
 //        echo "<h1>Overview</h1>";

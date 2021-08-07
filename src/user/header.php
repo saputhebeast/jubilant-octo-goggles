@@ -38,10 +38,9 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">All Keyboard Brands</a>
                         <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Asus Keyboards</a>
                         <a class="dropdown-item" href="#">Corsair Keyboards</a>
-                        <a class="dropdown-item" href="#">Hyperx Keyboards</a>
-                        <a class="dropdown-item" href="#">Logitech Keyboards</a>
-                        <a class="dropdown-item" href="#">Razor Keyboards</a>
+                        <a class="dropdown-item" href="#">HyperX Keyboards</a>
                         <a class="dropdown-item" href="#">Stealth Series Keyboards</a>
                     </div>
                 </li>

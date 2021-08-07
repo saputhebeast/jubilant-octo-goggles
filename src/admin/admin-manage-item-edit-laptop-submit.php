@@ -27,17 +27,17 @@
     $imageFileType = strtolower(pathinfo($target,PATHINFO_EXTENSION));
 
     if (empty($laptop_brand) | empty($laptop_model) | empty($processor) | empty($processor_model) | empty($gpu) | empty($ram) | empty($laptop_storage) | empty($refresh_rate) | empty($display_resolution) | empty($display_description) | empty($weight) | empty($warranty) | empty($price) | strlen($about_laptop)== 0) {
-        header("Location: admin-manage-item-add-laptop.php?error=empty blanks not valid");
+        header("Location: admin-manage-item-edit-laptop.php?laptop_id={$laptop_id}&error=empty blanks not valid");
         exit();
     }elseif(file_exists($target)){
-        header("Location: admin-manage-item-add-laptop.php?error=file already exists");
+        header("Location: admin-manage-item-edit-laptop.php?laptop_id={$laptop_id}&error=file already exists");
         exit();
     }elseif ($_FILES["image"]["size"] > 500000) {
-        header("Location: admin-manage-item-add-laptop.php?error=too large file");
+        header("Location: admin-manage-item-edit-laptop.php?laptop_id={$laptop_id}&error=too large file");
         exit();
     }
     elseif ($imageFileType != "png") {
-        header("Location: admin-manage-item-add-laptop.php?error=only png files are allowed");
+        header("Location: admin-manage-item-edit-laptop.php?laptop_id={$laptop_id}&error=only png files are allowed");
         exit();
     }else{
         move_uploaded_file($_FILES["image"]["tmp_name"], $target);
@@ -48,12 +48,12 @@
         if (mysqli_affected_rows($conn) > 0) {
             echo "<script type='text/javascript'>";
             echo "alert('Laptop Updated Successfully');";
-            echo "window.location.href = 'admin-manage-item.php'";
+            echo "window.location.href = 'admin-manage-item-laptop.php'";
             echo "</script>";
         }else{
             echo "<script type='text/javascript'>";
             echo "alert('Laptop Not Updated Successfully');";
-            echo "window.location.href = 'admin-manage-item.php'";
+            echo "window.location.href = 'admin-manage-item-laptop.php'";
             echo "</script>";
         }
     }

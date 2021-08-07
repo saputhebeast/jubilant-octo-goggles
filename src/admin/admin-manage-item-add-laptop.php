@@ -34,7 +34,7 @@
             <h1 class="text-center">Add Laptop</h1>
         </div>
         <div class="button-class">
-            <a href="admin-manage-item.php" class="btn btn-primary">Go back to dashboard</a>
+            <a href="admin-manage-item-laptop.php" class="btn btn-primary">Go back to dashboard</a>
         </div>
         <form action="admin-manage-item-add-laptop-submit.php" method="POST" enctype="multipart/form-data">
             <div class="from-group">

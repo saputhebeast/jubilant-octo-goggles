@@ -8,6 +8,7 @@ if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SES
 
     <?php
     $order_id = $_GET['order_id'];
+    $_SESSION['order_id'] = $order_id;
 
     $sql = "SELECT * FROM item_order WHERE order_id = '$order_id'";
     $result = mysqli_query($conn, $sql);

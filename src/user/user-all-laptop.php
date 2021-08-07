@@ -53,7 +53,7 @@
                                     <img src="<?php echo $row['image']?>" alt="" width="250px" height="250px">
                                     <?php echo "Rs: ".number_format($row['price'], 2)?>
                                 </p>
-                                <a href="view-full-details.php?laptop_id=<?php echo $row['laptop_id']?>" class="btn btn-primary">Full Details</a>
+                                <a href="view-full-laptop-details.php?laptop_id=<?php echo $row['laptop_id']?>" class="btn btn-primary">Full Details</a>
                             </div>
                             </div>
                         </div>

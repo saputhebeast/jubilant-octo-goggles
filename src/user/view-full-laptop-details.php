@@ -40,6 +40,9 @@
             display:block;
             margin:auto;
         }
+        .container{
+            margin-bottom: 30px;
+        }
     </style> 
     <?php require "header.php"?>
 
@@ -94,6 +97,9 @@
                 </form>
             </div>
         </div>
+    </div>
+    <div class="container">
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta officia optio recusandae sint? A accusamus adipisci culpa eaque fuga in itaque laboriosam minus odio perspiciatis porro quo sunt, vel voluptate?</h1>
     </div>
     <?php require "footer.php"?>
 </body>

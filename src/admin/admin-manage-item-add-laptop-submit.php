@@ -51,12 +51,12 @@
         if (mysqli_affected_rows($conn) > 0) {
             echo "<script type='text/javascript'>";
             echo "alert('Laptop Added Successfully');";
-            echo "window.location.href = 'admin-manage-item.php'";
+            echo "window.location.href = 'admin-manage-item-laptop.php'";
             echo "</script>";
         }else{
             echo "<script type='text/javascript'>";
             echo "alert('Laptop Not Added Successfully');";
-            echo "window.location.href = 'admin-manage-item.php'";
+            echo "window.location.href = 'admin-manage-item-laptop.php'";
             echo "</script>";
         }
     }
