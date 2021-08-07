@@ -62,7 +62,7 @@
                     <div class="card h-25 d-inline-block">
                         <div class="card-body text-center">
                             <h5 class="card-title">Orders Count</h5>
-                            <h4 class="card-text text-danger"><strong><?php echo $users?></strong></h4>
+                            <h4 class="card-text text-danger"><strong><?php echo $orders?></strong></h4>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">Last updated: <?php echo $date?></small>
