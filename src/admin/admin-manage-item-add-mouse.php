@@ -53,40 +53,27 @@ if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SES
                 <input class="form-control" type="text" name="mouse_depth"><br>
                 <label for="">Mouse Weight: </label>
                 <input class="form-control" type="text" name="mouse_weight"><br>
+                <label for="">Mouse Resolution: </label>
+                <input class="form-control" type="text" name="mouse_resolution"><br>
                 <label for="">Mouse Durability: </label>
                 <input class="form-control" type="text" name="mouse_durability"><br>
                 <label for="">Mouse Price: </label>
                 <input class="form-control" type="text" name="mouse_price"><br>
                 <label for="">Mouse Warranty: </label>
-                <input class="form-control" type="text" name="mouse_warranty"><br>
-                <label for="">Mouse Description: </label>
-                <input class="form-control" type="text" name="mouse_description" value = ""><br>
+                <input class="form-control" type="text" name="mouse_warranty">
+                <label for="">About Mouse: </label><br>
+                <textarea class="form-control" name="mouse_description" id="" cols="100" rows="10"></textarea><br>
                 <label for="">Image: </label>
                 <input class="form-control" type="file" name="image" value = ""><br>
             </div>
-            <input class="btn btn-primary" type="submit" value="Add Mouse">
+            <input class="btn btn-primary" type="submit" name="add_mouse" value="Add Mouse">
         </form>
     </div>
     </body>
     </html>
-
     <?php
 }else{
     header("Location: admin.php");
     exit();
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
