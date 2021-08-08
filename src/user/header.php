@@ -41,7 +41,7 @@
                         <a class="dropdown-item" href="#">Asus Keyboards</a>
                         <a class="dropdown-item" href="#">Corsair Keyboards</a>
                         <a class="dropdown-item" href="#">HyperX Keyboards</a>
-                        <a class="dropdown-item" href="#">Stealth Series Keyboards</a>
+                        <a class="dropdown-item" href="#">SteelSeries Keyboards</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
