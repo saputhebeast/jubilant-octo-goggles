@@ -11,7 +11,7 @@
         $laptops = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM laptop"));
         $orders = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM item_order"));
         $keyboards = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM keyboard"));
-        $mice = 0;
+        if(mysqli_query($conn, "SELECT * FROM mouse")){$mice = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM mouse"));}else{$mice = 0;}
         $subscribers = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM newsletter"));
 //        echo "<h1>Overview</h1>";
 //        echo "<h2>Number of Admins: {$admins}</h2>";
