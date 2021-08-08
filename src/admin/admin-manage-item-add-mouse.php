@@ -46,7 +46,7 @@ if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SES
                 <label for="">Mouse Model: </label>
                 <input class="form-control" type="text" name="mouse_model" value = ""><br>
                 <label for="">Mouse Height: </label>
-                <input class="form-control" type="text" name="mouse-height"><br>
+                <input class="form-control" type="text" name="mouse_height"><br>
                 <label for="">Mouse Width: </label>
                 <input class="form-control" type="text" name="mouse_width" value = ""><br>
                 <label for="">Mouse Depth: </label>

@@ -114,11 +114,12 @@ if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SES
                     echo "<td>{$row['mouse_width']}</td>";
                     echo "<td>{$row['mouse_depth']}</td>";
                     echo "<td>{$row['mouse_weight']}</td>";
+                    echo "<td>{$row['mouse_resolution']}</td>";
                     echo "<td>{$row['mouse_durability']}</td>";
                     echo "<td>{$row['mouse_price']}</td>";
                     echo "<td>{$row['mouse_warranty']}</td>";
                     echo "<td>{$row['mouse_description']}</td>";
-                    echo "<td><a class='btn btn-warning' href='#php?mouse_id=$row[mouse_id]'>Edit</a><a class='btn btn-danger' href='#?mouse_id=$row[mouse_id]'>Delete</a></td>";
+                    echo "<td><a class='btn btn-warning' href='admin-manage-item-edit-mouse.php?mouse_id=$row[mouse_id]'>Edit</a><a class='btn btn-danger' href='admin-manage-item-delete-mouse.php?mouse_id=$row[mouse_id]'>Delete</a></td>";
                     echo "</tr>";
                 }
                 }else{
