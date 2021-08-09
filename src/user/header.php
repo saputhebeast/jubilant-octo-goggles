@@ -51,7 +51,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">All Mice</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Corsair Mice</a>
+                        <a class="dropdown-item" href="#">Asus Mice</a>
                         <a class="dropdown-item" href="#">Logitech Mice</a>
                         <a class="dropdown-item" href="#">Razor Mice</a>
                         <a class="dropdown-item" href="#">Stealth Series Mice</a>
