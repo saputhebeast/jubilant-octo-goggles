@@ -90,7 +90,7 @@ if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SES
                     <th>Mouse Brand</th>
                     <th>Mouse Model</th>
                     <th>Mouse Image</th>
-                    <th>Mouse Height</th>
+                    <th>Mouse Length</th>
                     <th>Mouse Width</th>
                     <th>Mouse Depth</th>
                     <th>Mouse Weight</th>
@@ -110,9 +110,9 @@ if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SES
                     echo "<td>{$row['mouse_brand']}</td>";
                     echo "<td>{$row['mouse_model']}</td>";
                     echo "<td><img src='{$row['mouse_image']}' width=100 height=100></td>";
-                    echo "<td>{$row['mouse_height']}</td>";
+                    echo "<td>{$row['mouse_length']}</td>";
                     echo "<td>{$row['mouse_width']}</td>";
-                    echo "<td>{$row['mouse_depth']}</td>";
+                    echo "<td>{$row['mouse_height']}</td>";
                     echo "<td>{$row['mouse_weight']}</td>";
                     echo "<td>{$row['mouse_resolution']}</td>";
                     echo "<td>{$row['mouse_durability']}</td>";

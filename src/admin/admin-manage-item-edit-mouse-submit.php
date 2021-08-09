@@ -11,9 +11,9 @@ if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SES
         $mouse_brand = $_POST['mouse_brand'];
         $mouse_model = $_POST['mouse_model'];
         $mouse_image = $_FILES['mouse_image'];
-        $mouse_height = $_POST['mouse_height'];
+        $mouse_length = $_POST['mouse_length'];
         $mouse_width = $_POST['mouse_width'];
-        $mouse_depth = $_POST['mouse_depth'];
+        $mouse_height = $_POST['mouse_height'];
         $mouse_weight = $_POST['mouse_weight'];
         $mouse_resolution = $_POST['mouse_resolution'];
         $mouse_durability = $_POST['mouse_durability'];
@@ -24,7 +24,7 @@ if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SES
         $target = "../images/mouse/".basename($_FILES['mouse_image']['name']);
         $imageFileType = strtolower(pathinfo($target,PATHINFO_EXTENSION));
 
-    if (empty($mouse_brand) | empty($mouse_model) | empty($mouse_height) | empty($mouse_width) | empty($mouse_depth) | empty($mouse_weight) | empty($mouse_resolution) | empty($mouse_durability) | empty($mouse_price) | empty($mouse_warranty) | strlen($mouse_description)== 0) {
+    if (empty($mouse_brand) | empty($mouse_model) | empty($mouse_length) | empty($mouse_width) | empty($mouse_height) | empty($mouse_weight) | empty($mouse_resolution) | empty($mouse_durability) | empty($mouse_price) | empty($mouse_warranty) | strlen($mouse_description)== 0) {
         header("Location: admin-manage-item-edit-mouse.php?mouse_id={$mouse_id}&error=empty blanks not valid");
         exit();
     }elseif($_FILES['mouse_image']['error'] !== UPLOAD_ERR_OK){
@@ -41,7 +41,7 @@ if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SES
         header("Location: admin-manage-item-edit-mouse.php?mouse_id={$mouse_id}&error=only png files are allowed");
         exit();
     }else{
-        $sql = "UPDATE mouse SET mouse_brand = '$mouse_brand', mouse_model = '$mouse_model', mouse_image = '$target', mouse_height = '$mouse_height', mouse_width = '$mouse_width', mouse_depth = '$mouse_depth', mouse_weight = '$mouse_weight', mouse_resolution = '$mouse_resolution', mouse_durability = '$mouse_durability', mouse_price = '$mouse_price', mouse_warranty = '$mouse_warranty', mouse_description = '$mouse_description' WHERE mouse_id = '$mouse_id'";
+        $sql = "UPDATE mouse SET mouse_brand = '$mouse_brand', mouse_model = '$mouse_model', mouse_image = '$target', mouse_length = '$mouse_length', mouse_width = '$mouse_width', mouse_height = '$mouse_height', mouse_weight = '$mouse_weight', mouse_resolution = '$mouse_resolution', mouse_durability = '$mouse_durability', mouse_price = '$mouse_price', mouse_warranty = '$mouse_warranty', mouse_description = '$mouse_description' WHERE mouse_id = '$mouse_id'";
         mysqli_query($conn, $sql);
 
         if (mysqli_affected_rows($conn) > 0) {

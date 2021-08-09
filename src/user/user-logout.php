@@ -6,8 +6,6 @@
         unset($_SESSION['first_name']);
         unset($_SESSION['last_name']);
         unset($_SESSION['email']);
-        echo "<script>location.href='user.php'</script>";
-    }else{
-        echo "<script>location.href='user.php'</script>";
     }
+echo "<script>location.href='user.php'</script>";
 ?>

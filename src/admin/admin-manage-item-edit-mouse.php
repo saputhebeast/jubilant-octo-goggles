@@ -40,7 +40,7 @@ if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SES
         $mouse_brand = $row['mouse_brand'];
         $mouse_model = $row['mouse_model'];
         $mouse_image = $row['mouse_image'];
-        $mouse_height = $row['mouse_height'];
+        $mouse_length = $row['mouse_length'];
         $mouse_width = $row['mouse_width'];
         $mouse_depth = $row['mouse_depth'];
         $mouse_weight = $row['mouse_weight'];
@@ -67,9 +67,9 @@ if(isset($_SESSION['admin_id']) && isset($_SESSION['first_name']) && isset($_SES
                 <label for="">Mouse ID</label><input class="form-control" type="text" name="mouse_id" value="<?php echo $mouse_id?>" readonly><br>
                 <label for="">Mouse Brand: </label><input class="form-control" type="text" name="mouse_brand" value="<?php echo $mouse_brand?>"><br>
                 <label for="">Mouse Model: </label><input class="form-control" type="text" name="mouse_model" value = "<?php echo $mouse_model?>"><br>
-                <label for="">Mouse Height: </label><input class="form-control" type="text" name="mouse_height" value = "<?php echo $mouse_height?>"><br>
+                <label for="">Mouse Length: </label><input class="form-control" type="text" name="mouse_length" value = "<?php echo $mouse_length?>"><br>
                 <label for="">Mouse Width: </label><input class="form-control" type="text" name="mouse_width" value="<?php echo $mouse_width?>"><br>
-                <label for="">Mouse Depth: </label><input class="form-control" type="text" name="mouse_depth" value="<?php echo $mouse_depth?>"><br>
+                <label for="">Mouse Height: </label><input class="form-control" type="text" name="mouse_height" value="<?php echo $mouse_height?>"><br>
                 <label for="">Mouse Weight: </label><input class="form-control" type="text" name="mouse_weight" value="<?php echo $mouse_weight?>"><br>
                 <label for="">Mouse Resolution: </label><input class="form-control" type="text" name="mouse_resolution" value="<?php echo $mouse_resolution?>"><br>
                 <label for="">Mouse Durability: </label><input class="form-control" type="text" name="mouse_durability" value="<?php echo $mouse_durability?>"><br>
