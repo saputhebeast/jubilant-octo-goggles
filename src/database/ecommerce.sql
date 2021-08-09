@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 05, 2021 at 04:24 PM
+-- Generation Time: Aug 09, 2021 at 06:55 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.5
 
@@ -41,8 +41,7 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`admin_id`, `first_name`, `last_name`, `email`, `password`) VALUES
 (1, 'Jason', 'Roy', 'jason@gmail.com', 'jason123'),
-(4, 'Sohan', 'Dilusha', 'sohan@gmail.com', 'sohan123'),
-(5, 'Peter', 'Parker', 'peter@gmail.com', 'peter123');
+(4, 'Sohan', 'Dilusha', 'sohan@gmail.com', 'sohan123');
 
 -- --------------------------------------------------------
 
@@ -68,10 +67,7 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`customer_id`, `first_name`, `last_name`, `street_address`, `city`, `postal_code`, `phone`, `email`, `password`) VALUES
 (1, 'Andrew', 'Perera', 'Kandy Road,', 'Kiribathgoda', 11600, 768843142, 'andrew@gmail.com', 'andrew'),
-(2, 'Tharinda', 'Darshaka', 'Udurawana', 'Kandy', 1100, 745875420, 'tharinda@gmail.com', 'tharinda123'),
-(4, 'Nimal', 'Perera', 'Temple Road, Horape', 'Ragama', 11010, 102456210, 'nimal@gmail.com', 'nimal'),
-(5, 'peter', 'parker', 'kandy road', 'malabe', 12021, 2147483647, 'peter@gmail.com', 'peter'),
-(6, 'Jeff ', 'Perera', '78, Kandy road,', 'Malabe', 12354, 125478542, 'jeff@gmail.com', 'jeff123');
+(8, 'Jeff', 'Perera', '78, Kandy road,', 'Malabe', 12354, 125478542, 'jeff@gmail.com', 'jeff');
 
 -- --------------------------------------------------------
 
@@ -138,7 +134,9 @@ CREATE TABLE `wishlist` (
 INSERT INTO `wishlist` (`wItem_id`, `customer_id`, `item_id`, `item_name`, `image`, `price`) VALUES
 (13, '1', '1', 'Asus ROG Zephyrus Duo 15 SE GX551', '../images/laptop/Asus ROG Zephyrus Duo 15 SE GX551.png', '845000'),
 (14, '1', '8', 'Acer Predator Helios 300', '../images/laptop/Acer Predator Helios 300.png', '325000'),
-(15, '1', '6', 'Asus ROG Zephyrus G14 GA401IU', '../images/laptop/Asus ROG Zephyrus G14 GA401IU.png', '315000');
+(15, '1', '6', 'Asus ROG Zephyrus G14 GA401IU', '../images/laptop/Asus ROG Zephyrus G14 GA401IU.png', '315000'),
+(16, '1', '7', 'Acer Nitro 5 2021', '../images/laptop/Acer Nitro 5 2021.png', '219000'),
+(17, '1', '7', 'Acer Nitro 5 2021', '../images/laptop/Acer Nitro 5 2021.png', '219000');
 
 --
 -- Indexes for dumped tables
@@ -182,7 +180,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `laptop`
@@ -194,7 +192,7 @@ ALTER TABLE `laptop`
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `wItem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `wItem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
