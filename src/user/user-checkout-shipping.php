@@ -44,20 +44,32 @@
     <div class="container">
 
             <?php
-            foreach($_SESSION['shopping_cart'] as $key => $value){
+            $sql = "SELECT * FROM cart WHERE cart_customer_id = '$customer_id'";
+            $result = mysqli_query($conn, $sql);
+            while($row = $result->fetch_assoc()){
+                $item_type = $row['cart_item_type'];
+                if ($item_type == 'mouse'){
+                    $link = 'view-full-mouse-details.php';
+                    $id = 'mouse_id';
+                }elseif ($item_type == 'keyboard'){
+                    $link = 'view-full-keyboard-details.php';
+                    $id = 'keyboard_id';
+                }elseif ($item_type == 'laptop'){
+                    $link = 'view-full-laptop-details.php';
+                    $id = 'laptop_id';
+                }
                 ?>
-                <!--                    <div class="card-header">-->
-                <!--                    </div>-->
+
         <div class="card">
                 <div class="card-body">
                     <div class="media position-relative">
-                        <img src="<?php echo $value['image']?>" class="mr-3" alt="..." width="120" height="120">
+                        <img src="<?php echo $row['cart_item_image']?>" class="mr-3" alt="..." width="120" height="120">
                         <div class="media-body">
-                            <h5 class="mt-0"><a href="view-full-laptop-details.php?laptop_id=<?php echo $value['laptop_id']?>"><?php echo $value['laptop_model']?></a></h5>
-                            <h6>Quantity: <?php echo $value['item_quantity']?></h6>
-                            <?php $price = number_format($value['item_price'], 2); ?>
-                            <h6>Laptop Price Rs: <?php echo $price?></h6>
-<!--                            <h6>Total Price Rs: --><?php //echo number_format($value['item_quantity'] * $value['item_price'], 2)?>
+                            <h5 class="mt-0"><a href="<?php echo $link?>?<?php echo $id?>=<?php echo $row['item_id']?>"><?php echo $row['cart_item_model']?></a></h5>
+                            <h6>Quantity: <?php echo $row['cart_item_quantity']?></h6>
+                            <?php $price = number_format($row['cart_item_price'], 2); ?>
+                            <h6><?php echo ucfirst($row['cart_item_type'])?> Price Rs: <?php echo $row['cart_item_price']?></h6>
+                            <h6>Total Price Rs: <?php echo number_format($row['cart_item_quantity'] * $row['cart_item_price'], 2)?>
                         </div>
                     </div>
                 </div>

@@ -66,7 +66,7 @@ if(mysqli_num_rows($result) > 0){
             echo "<p>$mouse_warranty"." Years Warranty</p>";
             echo "<h1>Rs: ".number_format($mouse_price, 2)."</h1>";
             ?>
-            <form action="cart-item-add.php?type=mouse&brand=<?php echo $mouse_brand?>&id=<?php echo $mouse_id?>" method="POST">
+            <form action="cart-item-add.php" method="POST">
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-sm-2">

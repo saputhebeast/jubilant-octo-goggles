@@ -73,6 +73,7 @@
             <td colspan="3" class="text-center"><a href="user-checkout-shipping.php" class="btn btn-primary">Checkout All Items</a></td>
         </tr>
         <?php
+            $_SESSION['total'] = $cart_total;
         }else{
         ?>
             <div class="container">

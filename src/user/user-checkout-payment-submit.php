@@ -2,6 +2,7 @@
     session_start();
     require "../resources/config.php";
     if(isset($_SESSION['customer_id']) && isset($_SESSION['first_name']) && isset($_SESSION['last_name'])){
+        $customer_id = $_SESSION['customer_id'];
         if (isset($_POST['pay'])) {
             $owner_name = $_POST['card_owner'];
             $card_number = $_POST['card_number'];
@@ -28,29 +29,25 @@
                 
                 $order_address = "{$_SESSION['order_first_name']} {$_SESSION['order_last_name']}, {$_SESSION['order_street']}, {$_SESSION['order_city']}, {$_SESSION['order_postal']}";
 
-                foreach ($_SESSION['shopping_cart'] as $key => $value) {
-                    $total_price = $value['item_quantity'] * $value['item_price'];
+                $sql = "SELECT * FROM cart WHERE cart_customer_id = '$customer_id'";
+                $result = mysqli_query($conn, $sql);
+                while($row = $result->fetch_assoc()){
+                    $total_price = $row['cart_item_quantity'] * $row['cart_item_price'];
                     $sql = "INSERT INTO item_order (order_customer_id, order_item_id, order_item_name, order_item_image, order_quantity, order_total_price, address, email, order_status) 
-        VALUES ('$_SESSION[customer_id]', '$value[laptop_id]', '$value[laptop_model]', '$value[image]', '$value[item_quantity]', '$total_price', '$order_address', '$_SESSION[order_email]', 'Ordered')";
+        VALUES ('$customer_id', '$row[cart_item_id]', '$row[cart_item_model]', '$row[cart_item_image]', '$row[cart_item_quantity]', '$total_price', '$order_address', '$_SESSION[order_email]', 'Ordered')";
                     mysqli_query($conn, $sql);
-        
                     if (mysqli_affected_rows($conn) > 0) {
-                        unset($_SESSION['shopping_cart']);
-                        unset($_SESSION['order_first_name']);
-                        unset($_SESSION['order_last_name']);
-                        unset($_SESSION['order_street']);
-                        unset($_SESSION['order_city']);
-                        unset($_SESSION['order_postal']);
-                        unset($_SESSION['order_email']);
-                        echo "<script type='text/javascript'>";
-                        echo "window.location.href = 'user-checkout-complete.php?status=success'";
-                        echo "</script>";
-                    }else{
-                        echo "<script type='text/javascript'>";
-                        echo "window.location.href = 'user-checkout-complete.php?status=fail'";
-                        echo "</script>";
+                        $sql = "DELETE FROM cart WHERE cart_item_id ='$row[cart_item_id]'";
+                        mysqli_query($conn, $sql);
                     }
                 }
+                echo "<script type='text/javascript'>";
+                if(mysqli_affected_rows($conn)){
+                    echo "window.location.href = 'user-checkout-complete.php?status=success'";
+                }else{
+                    echo "window.location.href = 'user-checkout-complete.php?status=fail'";
+                }
+                echo "</script>";
         }
     }
     }else{
