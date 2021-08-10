@@ -1,6 +1,15 @@
 <?php
 require "../resources/config.php";
-session_start();
+$mouse_brand = $_GET['mouse_brand'];
+if ($mouse_brand == 'Asus') {
+    $tagline = 'Inspiring Innovation • Persistent Perfection';
+} else if ($mouse_brand == 'Logitech') {
+    $tagline = 'Get in shape and innovate';
+} else if ($mouse_brand == 'Razer') {
+    $tagline = 'For Gamers. By Gamers';
+}else if ($mouse_brand == 'SteelSeries') {
+    $tagline = 'Winning Is Everything';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +19,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../styles/user/user.css">
-    <title>All Mice</title>
+    <title><?php echo $mouse_brand?> Laptops</title>
 </head>
 <body>
 <style>
@@ -28,8 +37,8 @@ session_start();
 
 <div class="jumbotron jumbotron-fluid bg-muted">
     <div class="container">
-        <h1 class="display-4">All Mice</h1>
-        <p class="lead">All Mice Brands in One Place</p>
+        <h1 class="display-4"><?php echo $mouse_brand?> Laptops</h1>
+        <p class="lead"><?php echo $tagline?></p>
     </div>
 </div>
 
@@ -37,7 +46,7 @@ session_start();
 <div class="laptop">
     <div class="container">
         <?php
-        $sql = "SELECT * FROM mouse";
+        $sql = "SELECT * FROM mouse WHERE mouse_brand = '$mouse_brand'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {

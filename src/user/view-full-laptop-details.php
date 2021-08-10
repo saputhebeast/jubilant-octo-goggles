@@ -70,14 +70,17 @@
                     echo "<p>$warranty"." Years Warranty</p>";
                     echo "<h1>Rs: ".number_format($price, 2)."</h1>";
                 ?>
-                <form action="cart-item-add.php?laptop_id=<?php echo $laptop_id?>" method="POST">
+                <form action="cart-item-add.php" method="POST">
                     <div class="form-group">
                         <div class="form-row">
                             <div class="col-sm-2">
                                 <input class="form-control" type="number" name="quantity" id="" min='0' required placeholder="Quantity">
-                                <input type="hidden" name="laptop_model" value="<?php echo $laptop_model?>">
-                                <input type="hidden" name="laptop_image" value="<?php echo $image?>">
-                                <input type="hidden" name="price" value="<?php echo $price?>">
+                                <input type="hidden" name="item_id" value="<?php echo $laptop_id?>">
+                                <input type="hidden" name="item_model" value="<?php echo $laptop_model?>">
+                                <input type="hidden" name="item_type" value="laptop">
+                                <input type="hidden" name="item_brand" value="<?php echo $laptop_brand?>">
+                                <input type="hidden" name="item_image" value="<?php echo $image?>">
+                                <input type="hidden" name="item_price" value="<?php echo $price?>">
                             </div>
                             <div class="col-sm">
                                 <input type="submit" value="Add to Cart" name="add_to_cart" class="btn btn-primary">

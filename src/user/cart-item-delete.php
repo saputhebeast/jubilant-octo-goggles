@@ -1,15 +1,22 @@
 <?php
 session_start();
-if (isset($_GET['action'])) {
+require "../resources/config.php";
+if(isset($_SESSION['customer_id']) && isset($_SESSION['first_name']) && isset($_SESSION['last_name'])){
+    if (isset($_GET['id'])){
+        $sql = "DELETE FROM cart WHERE cart_item_id = '$_GET[id]';";
+        mysqli_query($conn, $sql);
 
-    if ($_GET['action'] == 'delete') {
-        foreach ($_SESSION['shopping_cart'] as $key => $value) {
-            if ($value['laptop_id'] == $_GET['id']) {
-                unset($_SESSION['shopping_cart'][$key]);
-                echo "<script>alert('item removed')</script>";
-                echo "<script>window.location='cart.php'</script>";
-            }
+        echo "<script type='text/javascript'>";
+        if (mysqli_affected_rows($conn) > 0) {
+            echo "alert('Deleted Successfully');";
+        }else{
+            echo "alert('Deleting Failed');";
         }
+        echo "window.location.href = 'cart.php'";
+        echo "</script>";
+
     }
+}else{
+    header("Location: user-login.php");
 }
 ?>

@@ -1,5 +1,8 @@
 <?php 
     session_start();
+    require "../resources/config.php";
+    if(isset($_SESSION['customer_id']) && isset($_SESSION['first_name']) && isset($_SESSION['last_name'])){
+        require "header.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,46 +23,53 @@
             text-decoration: none;
         }
     </style>
-    <?php require "header.php"?>
     <div class="container">
         <h1>My Cart</h1>
     </div>
     <div class="container">
         <?php
-            if (!empty($_SESSION['shopping_cart'])) {
-                $total = 0;
-        ?>
+            $sql = "SELECT * FROM cart";
+            $result = mysqli_query($conn, $sql);
+            if (mysqli_num_rows($result) > 0) {
+                ?>
         <table class="table table-striped text-left">
             <thead>
-                <tr>
-                    <th>Item Name</th>
-                    <th>Image</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Total</th>
-                    <th>Action</th>
-                </tr>
+            <tr>
+                <th>Item Name</th>
+                <th>Image</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
             </thead>
-        <?php
-                foreach ($_SESSION['shopping_cart'] as $key => $value) {
+                <?php
+                $cart_total = 0;
+                while ($row = mysqli_fetch_assoc($result)) {
+                    if ($row['cart_item_type'] == 'mouse'){
+                        $link = 'view-full-mouse-details.php';
+                        $id = 'mouse_id';
+                    }elseif ($row['cart_item_type'] == 'keyboard'){
+                        $link = 'view-full-keyboard-details.php';
+                        $id = 'keyboard_id';
+                    }elseif ($row['cart_item_type'] == 'laptop'){
+                        $link = 'view-full-laptop-details.php';
+                        $id = 'laptop_id';
+                    }
         ?>
             <tr>
-                <td><a href="view-full-laptop-details.php?laptop_id=<?php echo $value['laptop_id']?>"><?php echo $value['laptop_model']?></a></td>
-                <td><img src="<?php echo $value['image']?>" alt="" width="100" height="100"></td>
-                <td><?php echo $value['item_quantity']?></td>
-                <td>Rs: <?php echo number_format($value['item_price'], 2)?></td>
-                <td>Rs: <?php echo number_format($value['item_quantity'] * $value['item_price'], 2);?></td>
-                <td><a href="cart-item-delete.php?action=delete&id=<?php echo $value['laptop_id']?>">Delete</a></td>
+                <td><a href="<?php echo $link?>?<?php echo $id?>=<?php echo $row['item_id']?>"><?php echo $row['cart_item_model']?></a></td>
+                <td><img src="<?php echo $row['cart_item_image']?>" alt="" width="100" height="100"></td>
+                <td><?php echo $row['cart_item_quantity']?></td>
+                <td>Rs: <?php echo number_format($row['cart_item_price'], 2)?></td>
+                <?php $cart_total += $row['cart_item_quantity'] * $row['cart_item_price']; ?>
+                <td>Rs: <?php echo number_format($cart_total, 2);?></td>
+                <td><a href="cart-item-delete.php?id=<?php echo $row['cart_item_id']?>">Delete</a></td>
             </tr>
-        <?php 
-            $total = $total + ($value['item_quantity'] * $value['item_price']);
-            }
-            $_SESSION['total'] = $total;
-        ?>
-
+                    <?php } ?>
         <tr>
             <td colspan="1" class="text-right">Total</td>
-            <td colspan="2" class="text-right">Rs: <?php echo number_format($total, 2);?></td>
+            <td colspan="2" class="text-right">Rs: <?php echo number_format($cart_total, 2);?></td>
             <td colspan="3" class="text-center"><a href="user-checkout-shipping.php" class="btn btn-primary">Checkout All Items</a></td>
         </tr>
         <?php
@@ -79,3 +89,8 @@
     </div>
 </body>
 </html>
+<?php
+    }else{
+        header("Location: user-login.php");
+    }
+?>

@@ -36,12 +36,12 @@
                     Keyboards
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">All Keyboard Brands</a>
+                        <a class="dropdown-item" href="user-all-keyboard.php">All Keyboard Brands</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Asus Keyboards</a>
-                        <a class="dropdown-item" href="#">Corsair Keyboards</a>
-                        <a class="dropdown-item" href="#">HyperX Keyboards</a>
-                        <a class="dropdown-item" href="#">SteelSeries Keyboards</a>
+                        <a class="dropdown-item" href="view-more-keyboard.php?keyboard_brand=Asus">Asus Keyboards</a>
+                        <a class="dropdown-item" href="view-more-keyboard.php?keyboard_brand=Corsair">Corsair Keyboards</a>
+                        <a class="dropdown-item" href="view-more-keyboard.php?keyboard_brand=HyperX">HyperX Keyboards</a>
+                        <a class="dropdown-item" href="view-more-keyboard.php?keyboard_brand=SteelSeries">SteelSeries Keyboards</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -49,12 +49,12 @@
                     Mice
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">All Mice</a>
+                        <a class="dropdown-item" href="user-all-mouse.php">All Mice</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Asus Mice</a>
-                        <a class="dropdown-item" href="#">Logitech Mice</a>
-                        <a class="dropdown-item" href="#">Razor Mice</a>
-                        <a class="dropdown-item" href="#">Stealth Series Mice</a>
+                        <a class="dropdown-item" href="view-more-mouse.php?mouse_brand=Asus">Asus Mice</a>
+                        <a class="dropdown-item" href="view-more-mouse.php?mouse_brand=Logitech">Logitech Mice</a>
+                        <a class="dropdown-item" href="view-more-mouse.php?mouse_brand=Razer">Razer Mice</a>
+                        <a class="dropdown-item" href="view-more-mouse.php?mouse_brand=SteelSeries">SteelSeries Mice</a>
                     </div>
                 </li>
             </ul>
@@ -80,7 +80,14 @@
                     </li>
                 <?php } ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="cart.php">My Cart <span class="badge badge-danger"><?php echo (isset($_SESSION['shopping_cart'])) ? count($_SESSION['shopping_cart']) : "0";?></span></a>
+                    <?php
+                    if (isset($_SESSION['customer_id'])) {
+                        ?>
+                        <?php if(mysqli_query($conn, "SELECT * FROM cart")){$cart = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM cart"));}else{$cart = 0;}?>
+                        <a class="nav-link" href="cart.php">My Cart <span class="badge badge-danger"><?php echo $cart?></span></a>
+                        <?php
+                    }
+                    ?>
                 </li>
                 <li class="nav-item">
                     <?php

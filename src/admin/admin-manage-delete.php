@@ -11,18 +11,15 @@
     $sql = "DELETE FROM admin WHERE admin_id = '$admin_id';";
     mysqli_query($conn, $sql);
 
+    echo "<script type='text/javascript'>";
     if (mysqli_affected_rows($conn) > 0) {
-        echo "<script type='text/javascript'>";
         echo "alert('Deleted Successfully');";
-        echo "window.location.href = 'admin-manage.php'";
-        echo "</script>";
     }else{
-        echo "<script type='text/javascript'>";
         echo "alert('Deleting Failed');";
-        echo "window.location.href = 'admin-manage.php'";
-        echo "</script>";
     }
-?>
+    echo "window.location.href = 'admin-manage.php'";
+    echo "</script>";
+        ?>
 
 <?php
     }else{

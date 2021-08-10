@@ -32,7 +32,7 @@
             echo "</script>";
         }
     }else{
-        header("Location: user.php");
+        header("Location: user-login.php");
         exit();
     }
 ?>
