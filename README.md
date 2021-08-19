@@ -3,6 +3,10 @@
 <p>Jubilant-octo-goggles is a fully functional laptop selling site.</p>
 
 <h2>Project Demo</h2>
+  <ul>
+    <li>Home Page</li>
+    <li>Admin Dashboard</li>
+  </ul>
 <img src = "https://github.com/saputhebeast/jubilant-octo-goggles/blob/main/demo/home.jpg">
 <img src = "https://github.com/saputhebeast/jubilant-octo-goggles/blob/main/demo/admin.jpg">
 
