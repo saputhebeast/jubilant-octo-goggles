@@ -1,42 +1,109 @@
-# jubilant-octo-goggles
+<h1><strong>Under Construction!!!!<strong></h1>
+<h1>Jubilant Octo Goggles</h1>
+<p>Jubilant-octo-goggles is a fully functional laptop selling site.</p>
 
-admin
-email- jason@gmail.com
-password- jason123
+<h2>Project Demo</h2>
+<img src = "https://github.com/saputhebeast/jubilant-octo-goggles/blob/main/demo/home.jpg">
+<img src = "https://github.com/saputhebeast/jubilant-octo-goggles/blob/main/demo/admin.jpg">
 
-customer
-email- andrew@gmail.com
-password- andrew
+<h2>Requirements</h2>
+<ul>
+  <li>You must have: </li>
+  <ul>
+      <li>PHP</li>
+      <li>MySQL</li>
+      <li>Server like Apache</li>
+      <li>You can easily manage everything using XAMPP</li>
+  </ul>
+</ul>
+
+<h2>Running the Project</h2>
+<ol>
+    <li>
+        <h4>Setup Files</h4>
+        <ul>
+          <li>Copy this files to <code>C:\xampp\htdocs\php</code> directory.</li>
+          <li>Start MySQL and Apache from XAMPP Control Panel.</li>
+          <li>Create Database
+            <ul>
+                <li>Go to PHP MyAdmin <code>http://localhost/phpmyadmin/index.php</code></li>
+                <li>Create database. Give name as ecommerce</li>
+                <li>Import ecommerce.sql file</li>
+            </ul>
+          </li>
+          <li>User Side: <code>jubilant-octo-goggles/src/user/user.php</code></li>
+          <li>Admin Side: <code>jubilant-octo-goggles/src/admin/admin.php</code></li>
+        </ul>
+    </li>
+    <li>
+        <h4>Login Credentials</h4>
+        <ul>
+            <li>User Login: 
+                <ul>
+                    <li>Email: <code>andrew@gmail.com</code></li>
+                    <li>Password: <code>andrew</code></li>
+                </ul>
+            </li>
+            <li>Admin Login: 
+                <ul>
+                    <li>Email: <code>jason@gmail.com</code></li>
+                    <li>Password: <code>jason123</code></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <h4>Setup Sending Email Service Using XAMPP Server</h4>
+        <ul>
+            <li>Requirements: 
+                <ul>
+                    <li>Gmail Account (turn off two-factor authentication and turn on 'access for less secure apps settings')</li>
+                    <li>SMTP Server Address- smtp.gmail.com</li>
+                    <li>Port- 465</li>
+                    <li>Username- your gmail address</li>
+                    <li>Password- your gmail password</li>
+                </ul>
+            </li>
+            <li>Setup:
+                <ul>
+                    <li>Backup before modifying the files below</li>
+                    <ul>
+                        <li><code>xampp/sendmail/sendmail</code></li>
+                        <li><code>xampp/php/php</code></li>
+                    </ul>
+                </ul>
+                <ul>
+                    <li>Change Below Things in Sendmail File Which Located in <code>C:\xampp\sendmail</code></li>
+                    <ul>
+                        <li>smtp_server=smtp.gmail.com</li>
+                        <li>smtp_port=465</li>
+                        <li>error_logfile=error.log --> uncomment if this one commented</li>
+                        <li>debug_logfile=debug.log --> uncomment if this one commented</li>
+                        <li>auth_username= your gmail address</li>
+                        <li>auth_password= your gmail password</li>
+                        <li>force_sender= your gmail address</li>
+                    </ul>
+                </ul>
+                <ul>
+                    <li>Change Below Things in PHP File Which Located in <code>C:\xampp\php</code></li>
+                    <ul>
+                        <li>SMTP=smtp.gmail.com</li>
+                        <li>smtp_port=465</li>
+                        <li>sendmail_from= your gmail address</li>
+                        <li>set path without changing anything. if your xampp not in C, change C.
+                            <ul>
+                                <li>sendmail_path= "\"C:\xampp\sendmail\sendmail.exe\" -t"</li>
+                            </ul>
+                        </li>
+                        <li>restart apache on xampp before sending mails in contact form</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ol>
 
 
 
-send email from xampp server
 
-requirements
-    gmail account (turn off two-factor authentication and turn on 'access for less secure apps settings')
-    smtp server address- smtp.gmail.com
-    port- 465
-    username- your gmail address
-    password- your gmail password
 
-backup before modifying the files below
-1) xampp/sendmail/sendmail
-2) xampp/php/php
 
-sendmail file
-smtp_server=smtp.gmail.com
-smtp_port=465
-error_logfile=error.log --> uncomment if this one commented
-debug_logfile=debug.log --> uncomment if this one commented
-auth_username= your gmail address
-auth_password= your gmail password
-force_sender= your gmail address
-
-php file
-SMTP=smtp.gmail.com
-smtp_port=465
-sendmail_from= your gmail address
-sendmail_path= "\"C:\xampp\sendmail\sendmail.exe\" -t"
-set path without changing anything. if you not in C, change C.
-
-restart apache on xampp before sending mails in contact form
