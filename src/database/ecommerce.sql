@@ -66,7 +66,7 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_id`, `first_name`, `last_name`, `street_address`, `city`, `postal_code`, `phone`, `email`, `password`) VALUES
-(1, 'Andrew', 'Perera', 'Kandy Road,', 'Kiribathgoda', 11600, 768843142, 'andrew@gmail.com', 'andrew'),
+(1, 'Andrew', 'Perera', 'Kandy Road,', 'Kiribathgoda', 11600, 078564785, 'andrew@gmail.com', 'andrew'),
 (8, 'Jeff', 'Perera', '78, Kandy road,', 'Malabe', 12354, 125478542, 'jeff@gmail.com', 'jeff');
 
 -- --------------------------------------------------------
