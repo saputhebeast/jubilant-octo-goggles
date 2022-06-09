@@ -1,7 +1,3 @@
-<h1><strong>Under Construction!!!!<strong></h1>
-<h1>Jubilant Octo Goggles</h1>
-<p>Jubilant-octo-goggles is a fully functional laptop selling site.</p>
-
 <h2>Project Demo</h2>
   <ul>
     <li>Home Page</li>
